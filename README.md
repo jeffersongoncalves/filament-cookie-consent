@@ -1,3 +1,9 @@
+<div class="filament-hidden">
+
+![Laravel Created By](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/master/art/jeffersongoncalves-filament-cookie-consent.png)
+
+</div>
+
 # Filament Cookie Consent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
