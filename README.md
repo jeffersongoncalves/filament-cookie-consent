@@ -22,23 +22,54 @@ composer require jeffersongoncalves/filament-cookie-consent
 
 ## Usage
 
-Publish config file.
+This package automatically integrates cookie consent functionality into your Filament panels. Once installed, the cookie consent banner will be automatically displayed on all Filament panel pages without any additional configuration.
+
+### Configuration
+
+You can customize the cookie consent appearance and behavior by publishing the configuration file:
 
 ```bash
 php artisan vendor:publish --tag=cookie-consent-config
 ```
 
-Add head template.
+This will publish the configuration file to `config/cookie-consent.php` where you can customize:
+
+- **Message content**: Customize the cookie consent message, button text, and privacy policy link
+- **Styling**: Configure colors for the popup background, text, and button
+- **Position**: Set the position of the cookie consent banner (bottom-left, bottom-right, top-left, top-right, etc.)
+
+Example configuration:
 
 ```php
-@include('cookie-consent::cookie-consent-head')
+return [
+    'content' => [
+        'message' => 'This website uses cookies and other tracking technologies...',
+        'dismiss' => 'Accept',
+        'link' => 'Privacy Policy',
+        'href' => '/privacy-policy',
+    ],
+    'palette' => [
+        'popup' => [
+            'background' => '#696969',
+            'text' => '#FFFFFF',
+        ],
+        'button' => [
+            'background' => '#FFAB00',
+            'text' => '#FFFFFF',
+        ],
+    ],
+    'position' => 'bottom-left',
+];
 ```
 
-Add body template.
+### How it works
 
-```php
-@include('cookie-consent::cookie-consent-body')
-```
+This package extends the [jeffersongoncalves/laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) package specifically for Filament panels. It automatically registers render hooks that inject the cookie consent templates into your Filament panel pages:
+
+- Cookie consent scripts are automatically added to the `<head>` section
+- Cookie consent banner is automatically added to the end of the `<body>` section
+
+No manual template inclusion is required when using this Filament package.
 
 ## Testing
 
