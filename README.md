@@ -20,6 +20,21 @@ This Filament package provides a simple and elegant way to implement cookie cons
 | [2.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/2.x) | 4.x              |
 | [3.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/3.x) | 5.x              |
 
+## Features
+
+- 🚀 **Automatic Integration**: No need to manually add blade templates - works out of the box with Filament
+- 🎨 **Clean & Customizable**: Elegant interface that matches your Filament theme
+- ⚖️ **GDPR & CCPA Compliant**: Ensures your application meets privacy regulation requirements
+- 🔧 **Highly Configurable**: Extensive configuration options for customization
+- 📱 **Responsive Design**: Works perfectly on desktop and mobile devices
+- 🌐 **Multi-language Support**: Easily translatable for international applications
+
+## Requirements
+
+- PHP 8.2 or higher
+- Laravel 11.0 or higher
+- Filament 4.0
+
 ## Installation
 
 You can install the package via composer:
