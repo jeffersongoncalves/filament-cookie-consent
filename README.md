@@ -12,6 +12,14 @@
 
 This Filament package provides seamless integration of cookie consent functionality into your Filament admin panels, ensuring compliance with privacy regulations like GDPR and CCPA. It automatically injects cookie consent banners and preferences into all Filament panels without requiring manual template modifications.
 
+## Compatibility
+
+| Package Version                                                               | Filament Version |
+|-------------------------------------------------------------------------------|------------------|
+| [1.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/1.x) | 3.x              |
+| [2.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/2.x) | 4.x              |
+| [3.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/3.x) | 5.x              |
+
 ## Features
 
 - 🚀 **Automatic Integration**: No need to manually add blade templates - works out of the box with Filament
@@ -32,7 +40,7 @@ This Filament package provides seamless integration of cookie consent functional
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-cookie-consent
+composer require jeffersongoncalves/filament-cookie-consent:^1.0
 ```
 
 ## Usage
