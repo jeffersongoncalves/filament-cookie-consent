@@ -33,7 +33,7 @@ This Filament package provides seamless integration of cookie consent functional
 
 - PHP 8.2 or higher
 - Laravel 11.0 or 12.0
-- Filament 3.0 or higher
+- Filament 3.0
 
 ## Installation
 
