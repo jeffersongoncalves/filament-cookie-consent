@@ -1,13 +1,13 @@
 <div class="filament-hidden">
 
-![Laravel Created By](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/master/art/jeffersongoncalves-filament-cookie-consent.png)
+![Filament Cookie Consent](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/1.x/art/jeffersongoncalves-filament-cookie-consent.png)
 
 </div>
 
 # Filament Cookie Consent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-cookie-consent/fix-php-code-style-issues.yml?branch=master&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-cookie-consent/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-cookie-consent/fix-php-code-style-issues.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-cookie-consent/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
 
 This Filament package provides seamless integration of cookie consent functionality into your Filament admin panels, ensuring compliance with privacy regulations like GDPR and CCPA. It automatically injects cookie consent banners and preferences into all Filament panels without requiring manual template modifications.
@@ -53,35 +53,49 @@ You can publish and customize the configuration file:
 php artisan vendor:publish --tag=cookie-consent-config
 ```
 
-This will publish the configuration file to `config/cookie-consent.php` where you can customize:
-
-- **Message content**: Customize the cookie consent message, button text, and privacy policy link
-- **Styling**: Configure colors for the popup background, text, and button
-- **Position**: Set the position of the cookie consent banner (bottom-left, bottom-right, top-left, top-right, etc.)
-
-Example configuration:
+This will publish the configuration file to `config/cookie-consent.php` where you can customize the appearance and behavior of the cookie consent banner.
 
 ```php
 return [
+    'css' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
+    'js' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
     'content' => [
-        'message' => 'This website uses cookies and other tracking technologies...',
-        'dismiss' => 'Accept',
-        'link' => 'Privacy Policy',
-        'href' => '/privacy-policy',
+        'href' => null,
+        'close' => '&#x274c;',
     ],
     'palette' => [
         'popup' => [
             'background' => '#696969',
             'text' => '#FFFFFF',
+            'link' => '#FFFFFF',
         ],
         'button' => [
-            'background' => '#FFAB00',
-            'text' => '#FFFFFF',
+            'background' => 'transparent',
+            'border' => '#f8e71c',
+            'text' => '#f8e71c',
+        ],
+        'highlight' => [
+            'background' => '#f8e71c',
+            'border' => '#f8e71c',
+            'text' => '#000000',
         ],
     ],
-    'position' => 'bottom-left',
+    'position' => 'bottom-left', // top-left, top-right, bottom-left, bottom-right
+    'theme' => 'block', // block, edgeless, classic
 ];
 ```
+
+## Admin Panel Provider
+
+This package automatically integrates with all your Filament panels. No extra configuration is needed in your `AdminPanelProvider.php` or other panel providers. It uses Filament render hooks to inject the necessary scripts and templates.
+
+## Screenshots
+
+| Top Left | Top Right |
+| :---: | :---: |
+| ![Top Left](screenshots/cookie-consent-top-left.png) | ![Top Right](screenshots/cookie-consent-top-right.png) |
+| **Bottom Left** | **Bottom Right** |
+| ![Bottom Left](screenshots/cookie-consent-bottom-left.png) | ![Bottom Right](screenshots/cookie-consent-bottom-right.png) |
 
 ### How it works
 
