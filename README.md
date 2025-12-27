@@ -12,12 +12,20 @@
 
 This Filament package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It offers a clean and customizable interface, allowing you to easily manage and display cookie consent banners and preferences.
 
+## Compatibility
+
+| Package Version                                                               | Filament Version |
+|-------------------------------------------------------------------------------|------------------|
+| [1.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/1.x) | 3.x              |
+| [2.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/2.x) | 4.x              |
+| [3.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/3.x) | 5.x              |
+
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-cookie-consent
+composer require jeffersongoncalves/filament-cookie-consent:^2.0
 ```
 
 ## Usage
