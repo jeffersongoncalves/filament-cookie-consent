@@ -1,16 +1,24 @@
 <div class="filament-hidden">
 
-![Laravel Created By](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/master/art/jeffersongoncalves-filament-cookie-consent.png)
+![Filament Cookie Consent](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/3.x/art/jeffersongoncalves-filament-cookie-consent.png)
 
 </div>
 
 # Filament Cookie Consent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-cookie-consent/fix-php-code-style-issues.yml?branch=master&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-cookie-consent/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-cookie-consent/fix-php-code-style-issues.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-cookie-consent/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A3.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
 
 This Filament package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It offers a clean and customizable interface, allowing you to easily manage and display cookie consent banners and preferences.
+
+## Compatibility
+
+| Package Version                                                               | Filament Version |
+|-------------------------------------------------------------------------------|------------------|
+| [1.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/1.x) | 3.x              |
+| [2.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/2.x) | 4.x              |
+| [3.x](https://github.com/jeffersongoncalves/filament-cookie-consent/tree/3.x) | 5.x              |
 
 ## Installation
 
@@ -26,41 +34,51 @@ This package automatically integrates cookie consent functionality into your Fil
 
 ### Configuration
 
-You can customize the cookie consent appearance and behavior by publishing the configuration file:
-
-```bash
-php artisan vendor:publish --tag=cookie-consent-config
-```
-
-This will publish the configuration file to `config/cookie-consent.php` where you can customize:
-
-- **Message content**: Customize the cookie consent message, button text, and privacy policy link
-- **Styling**: Configure colors for the popup background, text, and button
-- **Position**: Set the position of the cookie consent banner (bottom-left, bottom-right, top-left, top-right, etc.)
-
-Example configuration:
+You can customize the appearance and behavior of the cookie consent banner by editing the `config/cookie-consent.php` file.
 
 ```php
 return [
+    'css' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
+    'js' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
     'content' => [
-        'message' => 'This website uses cookies and other tracking technologies...',
-        'dismiss' => 'Accept',
-        'link' => 'Privacy Policy',
-        'href' => '/privacy-policy',
+        'href' => null,
+        'close' => '&#x274c;',
     ],
     'palette' => [
         'popup' => [
             'background' => '#696969',
             'text' => '#FFFFFF',
+            'link' => '#FFFFFF',
         ],
         'button' => [
-            'background' => '#FFAB00',
-            'text' => '#FFFFFF',
+            'background' => 'transparent',
+            'border' => '#f8e71c',
+            'text' => '#f8e71c',
+        ],
+        'highlight' => [
+            'background' => '#f8e71c',
+            'border' => '#f8e71c',
+            'text' => '#000000',
         ],
     ],
-    'position' => 'bottom-left',
+    'position' => 'bottom-left', // top-left, top-right, bottom-left, bottom-right
+    'theme' => 'block', // block, edgeless, classic
 ];
 ```
+
+### Screenshots
+
+Screenshots using this package in the admin panel provider.
+
+| Top Left | Top Right |
+| :---: | :---: |
+| ![Top Left](screenshots/cookie-consent-top-left.png) | ![Top Right](screenshots/cookie-consent-top-right.png) |
+| **Bottom Left** | **Bottom Right** |
+| ![Bottom Left](screenshots/cookie-consent-bottom-left.png) | ![Bottom Right](screenshots/cookie-consent-bottom-right.png) |
+
+### Admin Panel Provider
+
+To use this package, you need to register the `CookieConsentServiceProvider` in your `composer.json` (automatically done via Laravel package discovery) and ensure it's available for your Filament panels.
 
 ### How it works
 
