@@ -64,9 +64,9 @@ return [
 ];
 ```
 
-### Position
+### Screenshots
 
-This is how the cookie consent banner looks in the Filament Admin Panel:
+Screenshots using this package in the admin panel provider.
 
 | Top Left | Top Right |
 | :---: | :---: |
