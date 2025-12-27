@@ -91,11 +91,13 @@ return [
 
 Screenshots using this package in the admin panel provider.
 
-| Top Left | Top Right |
-| :---: | :---: |
-| ![Top Left](screenshots/cookie-consent-top-left.png) | ![Top Right](screenshots/cookie-consent-top-right.png) |
-| **Bottom Left** | **Bottom Right** |
-| ![Bottom Left](screenshots/cookie-consent-bottom-left.png) | ![Bottom Right](screenshots/cookie-consent-bottom-right.png) |
+|                           Top Left                           |                           Top Right                            |
+|:------------------------------------------------------------:|:--------------------------------------------------------------:|
+|     ![Top Left](screenshots/cookie-consent-top-left.png)     |     ![Top Right](screenshots/cookie-consent-top-right.png)     |
+
+|                       **Bottom Left**                        |                        **Bottom Right**                        |
+|:------------------------------------------------------------:|:--------------------------------------------------------------:|
+|  ![Bottom Left](screenshots/cookie-consent-bottom-left.png)  |  ![Bottom Right](screenshots/cookie-consent-bottom-right.png)  |
 
 ### Admin Panel Provider
 
