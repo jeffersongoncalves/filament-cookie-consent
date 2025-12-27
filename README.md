@@ -26,50 +26,63 @@ This package automatically integrates cookie consent functionality into your Fil
 
 ### Configuration
 
-You can customize the cookie consent appearance and behavior by publishing the configuration file:
+To customize the appearance and behavior of the cookie consent banner, you should first publish the configuration file:
 
 ```bash
 php artisan vendor:publish --tag=cookie-consent-config
 ```
 
-This will publish the configuration file to `config/cookie-consent.php` where you can customize:
-
-- **Message content**: Customize the cookie consent message, button text, and privacy policy link
-- **Styling**: Configure colors for the popup background, text, and button
-- **Position**: Set the position of the cookie consent banner (bottom-left, bottom-right, top-left, top-right, etc.)
-
-Example configuration:
+Then, you can customize the configuration in the `config/cookie-consent.php` file.
 
 ```php
 return [
+    'css' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
+    'js' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
     'content' => [
-        'message' => 'This website uses cookies and other tracking technologies...',
-        'dismiss' => 'Accept',
-        'link' => 'Privacy Policy',
-        'href' => '/privacy-policy',
+        'href' => null,
+        'close' => '&#x274c;',
     ],
     'palette' => [
         'popup' => [
             'background' => '#696969',
             'text' => '#FFFFFF',
+            'link' => '#FFFFFF',
         ],
         'button' => [
-            'background' => '#FFAB00',
-            'text' => '#FFFFFF',
+            'background' => 'transparent',
+            'border' => '#f8e71c',
+            'text' => '#f8e71c',
+        ],
+        'highlight' => [
+            'background' => '#f8e71c',
+            'border' => '#f8e71c',
+            'text' => '#000000',
         ],
     ],
-    'position' => 'bottom-left',
+    'position' => 'bottom-left', // top-left, top-right, bottom-left, bottom-right
+    'theme' => 'block', // block, edgeless, classic
 ];
 ```
 
+### Position
+
+This is how the cookie consent banner looks in the Filament Admin Panel:
+
+| Top Left | Top Right |
+| :---: | :---: |
+| ![Top Left](screenshots/cookie-consent-top-left.png) | ![Top Right](screenshots/cookie-consent-top-right.png) |
+| **Bottom Left** | **Bottom Right** |
+| ![Bottom Left](screenshots/cookie-consent-bottom-left.png) | ![Bottom Right](screenshots/cookie-consent-bottom-right.png) |
+
+### Admin Panel Provider
+
+To use this package, you need to register the `CookieConsentServiceProvider` in your `composer.json` (automatically done via Laravel package discovery) and ensure it's available for your Filament panels.
+
 ### How it works
 
-This package extends the [jeffersongoncalves/laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) package specifically for Filament panels. It automatically registers render hooks that inject the cookie consent templates into your Filament panel pages:
+This package extends the [jeffersongoncalves/laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) package specifically for Filament panels. It automatically registers render hooks that inject the cookie consent templates into your Filament panel pages.
 
-- Cookie consent scripts are automatically added to the `<head>` section
-- Cookie consent banner is automatically added to the end of the `<body>` section
-
-No manual template inclusion is required when using this Filament package.
+The integration is automatically handled by the `CookieConsentServiceProvider`, which registers the necessary assets for all Filament panels.
 
 ## Testing
 
