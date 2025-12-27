@@ -25,7 +25,7 @@ This Filament package provides a simple and elegant way to implement cookie cons
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-cookie-consent
+composer require jeffersongoncalves/filament-cookie-consent:^3.0
 ```
 
 ## Usage
