@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.1.0 - 2025-12-27
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/8
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/9
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/11
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/12
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-cookie-consent/compare/v2.0.0...v2.1.0
+
 ## v2.0.0 - 2025-07-17
 
 ### What's Changed
