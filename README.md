@@ -44,10 +44,15 @@ You can install the package via composer:
 composer require jeffersongoncalves/filament-cookie-consent:^3.1
 ```
 
-Publish and run the settings migration:
+If you haven't already, publish the Spatie Laravel Settings migration:
 
 ```bash
 php artisan vendor:publish --provider="Spatie\LaravelSettings\LaravelSettingsServiceProvider" --tag="migrations"
+```
+
+Then publish and run the cookie consent migration:
+
+```bash
 php artisan vendor:publish --provider="JeffersonGoncalves\CookieConsent\CookieConsentServiceProvider" --tag="cookie-consent-migrations"
 php artisan migrate
 ```
