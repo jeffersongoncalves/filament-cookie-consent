@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## v3.1.0 - 2026-02-22
+
+### Added
+
+- Cookie Consent Settings Page for managing all settings from the Filament panel
+- `CookieConsentPlugin` class for panel registration with `settingsPage()` option
+- Translation support (English and Brazilian Portuguese)
+
+### Changed
+
+- Upgraded `jeffersongoncalves/laravel-cookie-consent` dependency from `^1.0` to `^2.0` (database-driven settings via `spatie/laravel-settings`)
+- Added `filament/spatie-laravel-settings-plugin` as dependency
+
 ## v3.0.0 - 2025-12-27
 
 ### What's Changed

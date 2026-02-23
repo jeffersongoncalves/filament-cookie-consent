@@ -12,7 +12,8 @@ class CookieConsentServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name('filament-cookie-consent');
+        $package->name('filament-cookie-consent')
+            ->hasTranslations();
     }
 
     public function packageRegistered(): void
