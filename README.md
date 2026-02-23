@@ -50,10 +50,10 @@ If you haven't already, publish the Spatie Laravel Settings migration:
 php artisan vendor:publish --provider="Spatie\LaravelSettings\LaravelSettingsServiceProvider" --tag="migrations"
 ```
 
-Then publish and run the cookie consent migration:
+Then publish and run the cookie consent settings migration:
 
 ```bash
-php artisan vendor:publish --provider="JeffersonGoncalves\CookieConsent\CookieConsentServiceProvider" --tag="cookie-consent-migrations"
+php artisan vendor:publish --tag=cookie-consent-settings-migrations
 php artisan migrate
 ```
 
