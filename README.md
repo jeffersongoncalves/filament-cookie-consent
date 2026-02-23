@@ -10,7 +10,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-cookie-consent/fix-php-code-style-issues.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-cookie-consent/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A2.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-cookie-consent)
 
-This Filament package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It offers a clean and customizable interface, allowing you to easily manage and display cookie consent banners and preferences.
+This Filament package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It includes a **Settings Page** to manage all cookie consent options directly from your Filament panel.
 
 ## Compatibility
 
@@ -22,12 +22,13 @@ This Filament package provides a simple and elegant way to implement cookie cons
 
 ## Features
 
-- 🚀 **Automatic Integration**: No need to manually add blade templates - works out of the box with Filament
-- 🎨 **Clean & Customizable**: Elegant interface that matches your Filament theme
-- ⚖️ **GDPR & CCPA Compliant**: Ensures your application meets privacy regulation requirements
-- 🔧 **Highly Configurable**: Extensive configuration options for customization
-- 📱 **Responsive Design**: Works perfectly on desktop and mobile devices
-- 🌐 **Multi-language Support**: Easily translatable for international applications
+- **Automatic Integration**: No need to manually add blade templates - works out of the box with Filament
+- **Settings Page**: Manage all cookie consent settings directly from your Filament panel
+- **Database-driven Settings**: Uses `spatie/laravel-settings` for persistent, database-backed configuration
+- **GDPR & CCPA Compliant**: Ensures your application meets privacy regulation requirements
+- **Highly Configurable**: Customize colors, position, theme, and content via the admin panel
+- **Responsive Design**: Works perfectly on desktop and mobile devices
+- **Multi-language Support**: Easily translatable for international applications
 
 ## Requirements
 
@@ -40,74 +41,71 @@ This Filament package provides a simple and elegant way to implement cookie cons
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-cookie-consent:^2.0
+composer require jeffersongoncalves/filament-cookie-consent:^2.2
 ```
 
-## Usage
-
-This package automatically integrates cookie consent functionality into your Filament panels. Once installed, the cookie consent banner will be automatically displayed on all Filament panel pages without any additional configuration.
-
-### Configuration
-
-To customize the appearance and behavior of the cookie consent banner, you should first publish the configuration file:
+Publish and run the settings migration:
 
 ```bash
-php artisan vendor:publish --tag=cookie-consent-config
+php artisan vendor:publish --provider="Spatie\LaravelSettings\LaravelSettingsServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="JeffersonGoncalves\CookieConsent\CookieConsentServiceProvider" --tag="cookie-consent-migrations"
+php artisan migrate
 ```
 
-Then, you can customize the configuration in the `config/cookie-consent.php` file.
+## Plugin Registration
+
+Register the plugin in your Filament Panel Provider:
 
 ```php
-return [
-    'css' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css',
-    'js' => 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js',
-    'content' => [
-        'href' => null,
-        'close' => '&#x274c;',
-    ],
-    'palette' => [
-        'popup' => [
-            'background' => '#696969',
-            'text' => '#FFFFFF',
-            'link' => '#FFFFFF',
-        ],
-        'button' => [
-            'background' => 'transparent',
-            'border' => '#f8e71c',
-            'text' => '#f8e71c',
-        ],
-        'highlight' => [
-            'background' => '#f8e71c',
-            'border' => '#f8e71c',
-            'text' => '#000000',
-        ],
-    ],
-    'position' => 'bottom-left', // top-left, top-right, bottom-left, bottom-right
-    'theme' => 'block', // block, edgeless, classic
-];
+use JeffersonGoncalves\Filament\CookieConsent\CookieConsentPlugin;
+
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->plugins([
+            CookieConsentPlugin::make(),
+        ]);
+}
 ```
+
+## Settings Page
+
+Once registered, the plugin adds a **Cookie Consent Settings** page to your Filament panel under the "Settings" navigation group. From there you can configure:
+
+- **Assets**: CSS and JavaScript URLs for the cookie consent library
+- **Content**: Privacy policy URL and close button text
+- **Popup Colors**: Background, text, and link colors
+- **Button Colors**: Background, border, and text colors
+- **Highlight Colors**: Background, border, and text colors
+- **Layout**: Banner position and theme
+
+### Disabling the Settings Page
+
+If you only want the automatic cookie consent integration without the settings page:
+
+```php
+CookieConsentPlugin::make()
+    ->settingsPage(false),
+```
+
+## How it works
+
+This package extends the [jeffersongoncalves/laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) package specifically for Filament panels. It automatically registers render hooks that inject the cookie consent templates into your Filament panel pages:
+
+- Cookie consent scripts are automatically added to the `<head>` section
+- Cookie consent banner is automatically added to the end of the `<body>` section
+
+No manual template inclusion is required when using this Filament package.
 
 ### Screenshots
 
 Screenshots using this package in the admin panel provider.
 
-|                           Top Left                           |                           Top Right                            |
-|:------------------------------------------------------------:|:--------------------------------------------------------------:|
-|     ![Top Left](screenshots/cookie-consent-top-left.png)     |     ![Top Right](screenshots/cookie-consent-top-right.png)     |
-
-|                       **Bottom Left**                        |                        **Bottom Right**                        |
-|:------------------------------------------------------------:|:--------------------------------------------------------------:|
-|  ![Bottom Left](screenshots/cookie-consent-bottom-left.png)  |  ![Bottom Right](screenshots/cookie-consent-bottom-right.png)  |
-
-### Admin Panel Provider
-
-To use this package, you need to register the `CookieConsentServiceProvider` in your `composer.json` (automatically done via Laravel package discovery) and ensure it's available for your Filament panels.
-
-### How it works
-
-This package extends the [jeffersongoncalves/laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) package specifically for Filament panels. It automatically registers render hooks that inject the cookie consent templates into your Filament panel pages.
-
-The integration is automatically handled by the `CookieConsentServiceProvider`, which registers the necessary assets for all Filament panels.
+| Top Left | Top Right |
+| :---: | :---: |
+| ![Top Left](screenshots/cookie-consent-top-left.png) | ![Top Right](screenshots/cookie-consent-top-right.png) |
+| **Bottom Left** | **Bottom Right** |
+| ![Bottom Left](screenshots/cookie-consent-bottom-left.png) | ![Bottom Right](screenshots/cookie-consent-bottom-right.png) |
 
 ## Testing
 
@@ -129,7 +127,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Jèfferson Gonçalves](https://github.com/jeffersongoncalves)
+- [Jefferson Goncalves](https://github.com/jeffersongoncalves)
 - [All Contributors](../../contributors)
 
 ## License
