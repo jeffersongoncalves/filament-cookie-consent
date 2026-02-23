@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.3.0 - 2026-02-23
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-cookie-consent/compare/v2.2.0...v2.3.0
+
 ## v2.2.0 - 2026-02-23
 
 ### What's Changed
