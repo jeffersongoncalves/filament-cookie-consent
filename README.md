@@ -41,7 +41,7 @@ This Filament package provides a simple and elegant way to implement cookie cons
 You can install the package via composer:
 
 ```bash
-composer require jeffersongoncalves/filament-cookie-consent:^1.2
+composer require jeffersongoncalves/filament-cookie-consent:^1.3
 ```
 
 If you haven't already, publish the Spatie Laravel Settings migration:
@@ -78,7 +78,7 @@ public function panel(Panel $panel): Panel
 Once registered, the plugin adds a **Cookie Consent Settings** page to your Filament panel under the "Settings" navigation group. From there you can configure:
 
 - **Assets**: CSS and JavaScript URLs for the cookie consent library
-- **Content**: Privacy policy URL and close button text
+- **Content**: Header, message, button texts, privacy policy URL, link target, and cookie policy text
 - **Popup Colors**: Background, text, and link colors
 - **Button Colors**: Background, border, and text colors
 - **Highlight Colors**: Background, border, and text colors

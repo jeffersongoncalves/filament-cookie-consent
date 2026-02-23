@@ -5,6 +5,7 @@ namespace JeffersonGoncalves\Filament\CookieConsent\Pages;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
@@ -52,13 +53,50 @@ class ManageCookieConsentSettings extends SettingsPage
                 Section::make(__('filament-cookie-consent::pages.sections.content.heading'))
                     ->description(__('filament-cookie-consent::pages.sections.content.description'))
                     ->schema([
+                        TextInput::make('content_header')
+                            ->label(__('filament-cookie-consent::pages.fields.content_header'))
+                            ->required(),
+
+                        Textarea::make('content_message')
+                            ->label(__('filament-cookie-consent::pages.fields.content_message'))
+                            ->required()
+                            ->columnSpanFull(),
+
+                        TextInput::make('content_dismiss')
+                            ->label(__('filament-cookie-consent::pages.fields.content_dismiss'))
+                            ->required(),
+
+                        TextInput::make('content_allow')
+                            ->label(__('filament-cookie-consent::pages.fields.content_allow'))
+                            ->required(),
+
+                        TextInput::make('content_deny')
+                            ->label(__('filament-cookie-consent::pages.fields.content_deny'))
+                            ->required(),
+
+                        TextInput::make('content_link')
+                            ->label(__('filament-cookie-consent::pages.fields.content_link'))
+                            ->required(),
+
                         TextInput::make('content_href')
                             ->label(__('filament-cookie-consent::pages.fields.content_href'))
                             ->url()
                             ->nullable(),
 
+                        Select::make('content_target')
+                            ->label(__('filament-cookie-consent::pages.fields.content_target'))
+                            ->options([
+                                '_blank' => 'New Tab (_blank)',
+                                '_self' => 'Same Tab (_self)',
+                            ])
+                            ->required(),
+
                         TextInput::make('content_close')
                             ->label(__('filament-cookie-consent::pages.fields.content_close'))
+                            ->required(),
+
+                        TextInput::make('content_policy')
+                            ->label(__('filament-cookie-consent::pages.fields.content_policy'))
                             ->required(),
                     ])->columns(2),
 
