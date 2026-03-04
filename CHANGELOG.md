@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.3.1 - 2026-03-04
+
+### Breaking Changes
+
+- **Minimum Filament version bumped to `^4.8`** — required due to the new `PageConfiguration` parameter added to `Page::routes()` in [filamentphp/filament#19225](https://github.com/filamentphp/filament/pull/19225)
+
+### What's Changed
+
+- Update `composer.json` to require `filament/filament: ^4.8`
+
 ## v2.3.0 - 2026-02-23
 
 **Full Changelog**: https://github.com/jeffersongoncalves/filament-cookie-consent/compare/v2.2.0...v2.3.0
