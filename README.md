@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Filament Cookie Consent](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/2.x/art/jeffersongoncalves-filament-cookie-consent.png)
+![Filament Cookie Consent](https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/2.x/art/jeffersongoncalves-filament-cookie-consent.jpg)
 
 </div>
 
