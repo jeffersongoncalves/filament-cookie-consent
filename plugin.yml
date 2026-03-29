@@ -1,0 +1,50 @@
+# ============================================
+# Filament Plugin - Create Plugin Form
+# jeffersongoncalves - filamentphp.com
+# ============================================
+
+# --- Details ---
+name: "Cookie Consent"
+slug: "cookie-consent"
+github_repository: "jeffersongoncalves/filament-cookie-consent"
+description: "Cookie consent banner for GDPR and CCPA compliance with a clean and customizable interface."
+
+# --- Images ---
+# Anexe os arquivos de imagem junto com este YAML no chat
+image: "jeffersongoncalves-filament-cookie-consent.jpg"
+thumbnail: ""
+
+# --- Compatibility & Features ---
+versions:
+  - "v3"
+  - "v4"
+  - "v5"
+
+categories:
+  - "Panels"
+
+dark_theme_support: true
+translation_support: true
+
+# --- Documentation ---
+documentation_url: ""
+
+versioned_documentation:
+  - version: "v3"
+    url: "https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/1.x/README.md"
+  - version: "v4"
+    url: "https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/2.x/README.md"
+  - version: "v5"
+    url: "https://raw.githubusercontent.com/jeffersongoncalves/filament-cookie-consent/3.x/README.md"
+
+documentation_content: ""
+
+# --- URLs ---
+website: ""
+discord: ""
+
+# --- Pricing ---
+anystack_product_id: ""
+
+# --- Acao Final ---
+action: "draft"
