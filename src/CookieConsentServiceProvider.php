@@ -2,13 +2,11 @@
 
 namespace JeffersonGoncalves\Filament\CookieConsent;
 
-use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
-use Illuminate\Contracts\View\View;
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CookieConsentServiceProvider extends PackageServiceProvider
+class CookieConsentServiceProvider extends BasePackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -18,7 +16,9 @@ class CookieConsentServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        FilamentView::registerRenderHook(PanelsRenderHook::HEAD_START, fn (): View => view('cookie-consent::cookie-consent-head'));
-        FilamentView::registerRenderHook(PanelsRenderHook::BODY_END, fn (): View => view('cookie-consent::cookie-consent-body'));
+        $this->registerRenderHooks([
+            PanelsRenderHook::HEAD_START => 'cookie-consent::cookie-consent-head',
+            PanelsRenderHook::BODY_END => 'cookie-consent::cookie-consent-body',
+        ]);
     }
 }
