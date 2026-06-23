@@ -2,11 +2,11 @@
 
 namespace JeffersonGoncalves\Filament\CookieConsent;
 
-use Filament\Contracts\Plugin;
 use Filament\Panel;
 use JeffersonGoncalves\Filament\CookieConsent\Pages\ManageCookieConsentSettings;
+use JeffersonGoncalves\FilamentPluginCore\BasePlugin;
 
-class CookieConsentPlugin implements Plugin
+class CookieConsentPlugin extends BasePlugin
 {
     protected bool $hasSettingsPage = true;
 
@@ -22,24 +22,6 @@ class CookieConsentPlugin implements Plugin
                 ManageCookieConsentSettings::class,
             ]);
         }
-    }
-
-    public function boot(Panel $panel): void
-    {
-        //
-    }
-
-    public static function make(): static
-    {
-        return app(static::class);
-    }
-
-    public static function get(): static
-    {
-        /** @var static $plugin */
-        $plugin = filament(app(static::class)->getId());
-
-        return $plugin;
     }
 
     public function settingsPage(bool $condition = true): static
