@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.4.0 - 2026-06-23
+
+Refactor onto filament-plugin-core base (BasePlugin + registerRenderHooks); drop redundant dependencies (provided transitively).
+
 ## v1.3.0 - 2026-02-23
 
 **Full Changelog**: https://github.com/jeffersongoncalves/filament-cookie-consent/compare/v1.2.0...v1.3.0
