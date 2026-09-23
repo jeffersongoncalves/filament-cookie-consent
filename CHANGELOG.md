@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.5.0 - 2026-09-23
+
+### Changed
+
+- **Built on `filament-analytics-core`:** the plugin now extends `AbstractAnalyticsPlugin` and depends on `jeffersongoncalves/filament-analytics-core` (matching major), like the other analytics plugins. `filament/spatie-laravel-settings-plugin` now comes in through that package. The plugin id, the `settingsPage()` API and the defaults are unchanged.
+- On the 1.x branch of filament-cookie-consent and filament-metrics-matomo, the PHP requirement is now `^8.2`, which analytics-core already required.
+
+### What's Changed
+
+* refactor: build on filament-analytics-core (3.x) by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/40
+* ci: standardize dependabot config by @jeffersongoncalves in https://github.com/jeffersongoncalves/filament-cookie-consent/pull/41
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filament-cookie-consent/compare/3.4.0...3.5.0
+
 ## 3.4.0 - 2026-09-23
 
 ### What's new
