@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.7.0 - 2026-10-09
+
+`Plugin::make()->navigationGroup(string|Closure)` puts the settings page in one of your panel's own navigation groups (requires filament-analytics-core 1.1). Without it the translated group is kept.
+
 ## 1.6.0 - 2026-09-23
 
 ### Changed
