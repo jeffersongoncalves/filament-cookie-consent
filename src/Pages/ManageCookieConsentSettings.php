@@ -10,6 +10,7 @@ use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use JeffersonGoncalves\CookieConsent\Settings\CookieConsentSettings;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 
 class ManageCookieConsentSettings extends SettingsPage
 {
@@ -24,7 +25,7 @@ class ManageCookieConsentSettings extends SettingsPage
 
     public static function getNavigationGroup(): string|\UnitEnum|null
     {
-        return __('filament-cookie-consent::pages.navigation_group');
+        return AbstractAnalyticsPlugin::navigationGroupFor('filament-cookie-consent') ?? __('filament-cookie-consent::pages.navigation_group');
     }
 
     public function getTitle(): string
