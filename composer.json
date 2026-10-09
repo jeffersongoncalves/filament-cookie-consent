@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "jeffersongoncalves/filament-analytics-core": "^1.0",
+        "jeffersongoncalves/filament-analytics-core": "^1.1",
         "jeffersongoncalves/laravel-cookie-consent": "^4.0"
     },
     "require-dev": {

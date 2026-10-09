@@ -33,6 +33,15 @@ This Filament package provides a simple and elegant way to implement cookie cons
 - **Responsive Design**: Works perfectly on desktop and mobile devices
 - **Multi-language Support**: Easily translatable for international applications
 
+### Navigation group
+
+Put the settings page in one of your panel's own navigation groups (a string or a closure):
+
+```php
+CookieConsentPlugin::make()
+    ->navigationGroup(fn (): string => __('admin.navigation.settings')),
+```
+
 ## Requirements
 
 - PHP 8.1 or higher
