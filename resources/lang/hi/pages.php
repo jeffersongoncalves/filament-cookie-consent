@@ -29,6 +29,10 @@ return [
             'heading' => 'लेआउट',
             'description' => 'कुकी सहमति बैनर की स्थिति और थीम कॉन्फ़िगर करें।',
         ],
+        'compliance' => [
+            'heading' => 'अनुपालन',
+            'description' => 'चुनें कि आगंतुक कैसे सहमति दें और क्या Google टैग Consent Mode v2 संकेत प्राप्त करें।',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'टेक्स्ट',
         'position' => 'स्थिति',
         'theme' => 'थीम',
+        'type' => 'अनुपालन प्रकार',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'सहमति संकेत Google Tag Manager / gtag को भेजता है। सहमति टैग उनसे पहले लोड होना चाहिए।',
+    ],
+
+    'types' => [
+        'info' => 'केवल सूचना',
+        'opt-in' => 'Opt-in (कुकीज़ से पहले पूछें)',
+        'opt-out' => 'Opt-out (अस्वीकार करने तक कुकीज़)',
     ],
 ];

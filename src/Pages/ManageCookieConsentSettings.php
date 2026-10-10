@@ -6,6 +6,7 @@ use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -171,6 +172,23 @@ class ManageCookieConsentSettings extends SettingsPage
                                 'classic' => 'Classic',
                             ])
                             ->required(),
+                    ])->columns(2),
+
+                Section::make(__('filament-cookie-consent::pages.sections.compliance.heading'))
+                    ->description(__('filament-cookie-consent::pages.sections.compliance.description'))
+                    ->schema([
+                        Select::make('type')
+                            ->label(__('filament-cookie-consent::pages.fields.type'))
+                            ->options([
+                                'info' => __('filament-cookie-consent::pages.types.info'),
+                                'opt-in' => __('filament-cookie-consent::pages.types.opt-in'),
+                                'opt-out' => __('filament-cookie-consent::pages.types.opt-out'),
+                            ])
+                            ->required(),
+
+                        Toggle::make('consent_mode')
+                            ->label(__('filament-cookie-consent::pages.fields.consent_mode'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.consent_mode_help')),
                     ])->columns(2),
             ]);
     }
