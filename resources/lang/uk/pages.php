@@ -29,6 +29,10 @@ return [
             'heading' => 'Макет',
             'description' => 'Налаштуйте розташування та тему банера згоди на cookie.',
         ],
+        'compliance' => [
+            'heading' => 'Відповідність',
+            'description' => 'Оберіть, як відвідувачі надають згоду і чи отримують теги Google сигнали Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Текст',
         'position' => 'Розташування',
         'theme' => 'Тема',
+        'type' => 'Тип відповідності',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Надсилає сигнали згоди до Google Tag Manager / gtag. Тег згоди має завантажуватися раніше.',
+    ],
+
+    'types' => [
+        'info' => 'Лише повідомлення',
+        'opt-in' => 'Opt-in (питати до cookies)',
+        'opt-out' => 'Opt-out (cookies до відмови)',
     ],
 ];

@@ -29,6 +29,10 @@ return [
             'heading' => 'چیدمان',
             'description' => 'موقعیت و پوسته بنر رضایت کوکی را پیکربندی کنید.',
         ],
+        'compliance' => [
+            'heading' => 'انطباق',
+            'description' => 'انتخاب کنید بازدیدکنندگان چگونه رضایت دهند و آیا برچسب‌های Google سیگنال‌های Consent Mode v2 را دریافت کنند.',
+        ],
     ],
     'fields' => [
         'css_url' => 'آدرس CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'متن',
         'position' => 'موقعیت',
         'theme' => 'پوسته',
+        'type' => 'نوع انطباق',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'سیگنال‌های رضایت را به Google Tag Manager / gtag می‌فرستد. برچسب رضایت باید پیش از آن‌ها بارگذاری شود.',
+    ],
+
+    'types' => [
+        'info' => 'فقط اطلاع‌رسانی',
+        'opt-in' => 'Opt-in (پرسیدن پیش از کوکی‌ها)',
+        'opt-out' => 'Opt-out (کوکی تا زمان رد)',
     ],
 ];

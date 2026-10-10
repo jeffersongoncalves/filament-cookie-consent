@@ -29,6 +29,10 @@ return [
             'heading' => '布局',
             'description' => '配置 Cookie 同意横幅的位置和主题。',
         ],
+        'compliance' => [
+            'heading' => '合规',
+            'description' => '选择访客如何同意，以及 Google 标签是否接收 Consent Mode v2 信号。',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => '文本',
         'position' => '位置',
         'theme' => '主题',
+        'type' => '合规类型',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => '向 Google Tag Manager / gtag 发送同意信号。同意标签必须先于它们加载。',
+    ],
+
+    'types' => [
+        'info' => '仅通知',
+        'opt-in' => '选择加入（使用 Cookie 前询问）',
+        'opt-out' => '选择退出（拒绝前使用 Cookie）',
     ],
 ];
