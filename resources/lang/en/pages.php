@@ -30,6 +30,10 @@ return [
             'heading' => 'Layout',
             'description' => 'Configure the position and theme of the cookie consent banner.',
         ],
+        'compliance' => [
+            'heading' => 'Compliance',
+            'description' => 'Choose how visitors consent and whether Google tags receive Consent Mode v2 signals.',
+        ],
     ],
 
     'fields' => [
@@ -56,5 +60,14 @@ return [
         'highlight_text' => 'Text',
         'position' => 'Position',
         'theme' => 'Theme',
+        'type' => 'Compliance type',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Sends consent signals to Google Tag Manager / gtag. The cookie consent head tag must load before them.',
+    ],
+
+    'types' => [
+        'info' => 'Notice only',
+        'opt-in' => 'Opt-in (ask before setting cookies)',
+        'opt-out' => 'Opt-out (cookies until declined)',
     ],
 ];

@@ -29,6 +29,10 @@ return [
             'heading' => 'Układ',
             'description' => 'Skonfiguruj położenie i motyw banera zgody na pliki cookie.',
         ],
+        'compliance' => [
+            'heading' => 'Zgodność',
+            'description' => 'Wybierz, jak odwiedzający wyrażają zgodę i czy tagi Google otrzymują sygnały Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'Adres URL CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Tekst',
         'position' => 'Położenie',
         'theme' => 'Motyw',
+        'type' => 'Typ zgodności',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Wysyła sygnały zgody do Google Tag Manager / gtag. Tag zgody musi załadować się wcześniej.',
+    ],
+
+    'types' => [
+        'info' => 'Tylko informacja',
+        'opt-in' => 'Opt-in (pytaj przed cookies)',
+        'opt-out' => 'Opt-out (cookies do odmowy)',
     ],
 ];
