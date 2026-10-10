@@ -29,6 +29,10 @@ return [
             'heading' => 'レイアウト',
             'description' => 'Cookie 同意バナーの位置とテーマを設定します。',
         ],
+        'compliance' => [
+            'heading' => 'コンプライアンス',
+            'description' => '訪問者の同意方法と、Google タグに Consent Mode v2 のシグナルを送るかを選択します。',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'テキスト',
         'position' => '位置',
         'theme' => 'テーマ',
+        'type' => 'コンプライアンスの種類',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => '同意シグナルを Google Tag Manager / gtag に送信します。同意タグはそれらより先に読み込む必要があります。',
+    ],
+
+    'types' => [
+        'info' => '通知のみ',
+        'opt-in' => 'オプトイン（Cookie の前に確認）',
+        'opt-out' => 'オプトアウト（拒否されるまで Cookie）',
     ],
 ];

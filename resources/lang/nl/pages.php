@@ -29,6 +29,10 @@ return [
             'heading' => 'Lay-out',
             'description' => 'Configureer de positie en het thema van de cookiebanner.',
         ],
+        'compliance' => [
+            'heading' => 'Naleving',
+            'description' => 'Kies hoe bezoekers toestemming geven en of Google-tags Consent Mode v2-signalen ontvangen.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS-URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Tekst',
         'position' => 'Positie',
         'theme' => 'Thema',
+        'type' => 'Nalevingstype',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Stuurt toestemmingssignalen naar Google Tag Manager / gtag. De toestemmingstag moet eerder laden.',
+    ],
+
+    'types' => [
+        'info' => 'Alleen melding',
+        'opt-in' => 'Opt-in (vragen vóór cookies)',
+        'opt-out' => 'Opt-out (cookies tot weigering)',
     ],
 ];

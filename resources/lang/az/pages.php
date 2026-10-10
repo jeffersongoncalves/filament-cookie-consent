@@ -29,6 +29,10 @@ return [
             'heading' => 'Yerləşim',
             'description' => 'Kuki razılığı bannerinin mövqeyini və temasını konfiqurasiya edin.',
         ],
+        'compliance' => [
+            'heading' => 'Uyğunluq',
+            'description' => 'Ziyarətçilərin necə razılıq verdiyini və Google teqlərinin Consent Mode v2 siqnallarını alıb-almadığını seçin.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Mətn',
         'position' => 'Mövqe',
         'theme' => 'Tema',
+        'type' => 'Uyğunluq növü',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Razılıq siqnallarını Google Tag Manager / gtag-ə göndərir. Razılıq teqi onlardan əvvəl yüklənməlidir.',
+    ],
+
+    'types' => [
+        'info' => 'Yalnız bildiriş',
+        'opt-in' => 'Opt-in (kukilərdən əvvəl soruş)',
+        'opt-out' => 'Opt-out (imtinaya qədər kukilər)',
     ],
 ];

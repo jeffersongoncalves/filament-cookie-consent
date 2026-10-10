@@ -29,6 +29,10 @@ return [
             'heading' => 'Joylashuv',
             'description' => 'Cookie roziligi bannerining joylashuvi va mavzusini sozlang.',
         ],
+        'compliance' => [
+            'heading' => 'Muvofiqlik',
+            'description' => 'Tashrif buyuruvchilar qanday rozilik berishini va Google teglari Consent Mode v2 signallarini olishini tanlang.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Matn',
         'position' => 'Joylashuv',
         'theme' => 'Mavzu',
+        'type' => 'Muvofiqlik turi',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Rozilik signallarini Google Tag Manager / gtag ga yuboradi. Rozilik tegi ulardan oldin yuklanishi kerak.',
+    ],
+
+    'types' => [
+        'info' => 'Faqat bildirishnoma',
+        'opt-in' => 'Opt-in (cookie dan oldin so\'rash)',
+        'opt-out' => 'Opt-out (rad etilguncha cookie)',
     ],
 ];

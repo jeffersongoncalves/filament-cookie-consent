@@ -29,6 +29,10 @@ return [
             'heading' => 'Макет',
             'description' => 'Настройте положение и тему баннера согласия на cookie.',
         ],
+        'compliance' => [
+            'heading' => 'Соответствие',
+            'description' => 'Выберите, как посетители дают согласие и получают ли теги Google сигналы Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Текст',
         'position' => 'Положение',
         'theme' => 'Тема',
+        'type' => 'Тип соответствия',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Отправляет сигналы согласия в Google Tag Manager / gtag. Тег согласия должен загружаться раньше.',
+    ],
+
+    'types' => [
+        'info' => 'Только уведомление',
+        'opt-in' => 'Opt-in (спрашивать до cookies)',
+        'opt-out' => 'Opt-out (cookies до отказа)',
     ],
 ];
