@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.7.0 - 2026-10-10
+
+Adds a **Compliance** section to the settings page for the settings introduced in [laravel-cookie-consent 4.2.0](https://github.com/jeffersongoncalves/laravel-cookie-consent/releases/tag/4.2.0):
+
+- **Compliance type**: info (default) / opt-in / opt-out — opt-in/opt-out show the Allow/Decline buttons.
+- **Google Consent Mode v2** toggle: pushes consent default/update to the dataLayer for filament-gtm / filament-gtag (the cookie consent head hook already renders before them).
+
+Labels in all 19 languages. Requires `laravel-cookie-consent ^4.2` — run `php artisan migrate` after updating.
+
 ## 3.6.0 - 2026-10-09
 
 `Plugin::make()->navigationGroup(string|Closure)` puts the settings page in one of your panel's own navigation groups (requires filament-analytics-core 3.1). Without it the translated group is kept.
