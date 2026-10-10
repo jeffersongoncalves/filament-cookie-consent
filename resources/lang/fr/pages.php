@@ -29,6 +29,10 @@ return [
             'heading' => 'Mise en page',
             'description' => 'Configurez la position et le thème de la bannière de consentement aux cookies.',
         ],
+        'compliance' => [
+            'heading' => 'Conformité',
+            'description' => 'Choisissez comment les visiteurs consentent et si les balises Google reçoivent les signaux Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Texte',
         'position' => 'Position',
         'theme' => 'Thème',
+        'type' => 'Type de conformité',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Envoie les signaux de consentement à Google Tag Manager / gtag. La balise de consentement doit être chargée avant.',
+    ],
+
+    'types' => [
+        'info' => 'Information seule',
+        'opt-in' => 'Opt-in (demander avant les cookies)',
+        'opt-out' => 'Opt-out (cookies jusqu\'au refus)',
     ],
 ];

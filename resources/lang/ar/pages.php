@@ -29,6 +29,10 @@ return [
             'heading' => 'التخطيط',
             'description' => 'اضبط موضع شريط موافقة ملفات تعريف الارتباط وسمته.',
         ],
+        'compliance' => [
+            'heading' => 'الامتثال',
+            'description' => 'اختر كيف يوافق الزوار وما إذا كانت علامات Google تتلقى إشارات Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'رابط CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'النص',
         'position' => 'الموضع',
         'theme' => 'السمة',
+        'type' => 'نوع الامتثال',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'يرسل إشارات الموافقة إلى Google Tag Manager / gtag. يجب تحميل علامة الموافقة قبلها.',
+    ],
+
+    'types' => [
+        'info' => 'إشعار فقط',
+        'opt-in' => 'Opt-in (السؤال قبل ملفات تعريف الارتباط)',
+        'opt-out' => 'Opt-out (ملفات تعريف الارتباط حتى الرفض)',
     ],
 ];

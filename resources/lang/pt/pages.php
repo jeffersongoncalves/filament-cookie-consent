@@ -29,6 +29,10 @@ return [
             'heading' => 'Esquema',
             'description' => 'Configure a posição e o tema do banner de consentimento de cookies.',
         ],
+        'compliance' => [
+            'heading' => 'Conformidade',
+            'description' => 'Defina como o visitante consente e se as etiquetas da Google recebem os sinais do Consent Mode v2.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL do CSS',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Texto',
         'position' => 'Posição',
         'theme' => 'Tema',
+        'type' => 'Tipo de conformidade',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Envia os sinais de consentimento ao Google Tag Manager / gtag. A etiqueta de consentimento tem de carregar antes deles.',
+    ],
+
+    'types' => [
+        'info' => 'Apenas aviso',
+        'opt-in' => 'Opt-in (pedir antes de usar cookies)',
+        'opt-out' => 'Opt-out (cookies até recusar)',
     ],
 ];

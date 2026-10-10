@@ -29,6 +29,10 @@ return [
             'heading' => 'Yerleşim',
             'description' => 'Çerez onayı banner\'ının konumunu ve temasını yapılandırın.',
         ],
+        'compliance' => [
+            'heading' => 'Uyumluluk',
+            'description' => 'Ziyaretçilerin nasıl onay vereceğini ve Google etiketlerinin Consent Mode v2 sinyallerini alıp almayacağını seçin.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Metin',
         'position' => 'Konum',
         'theme' => 'Tema',
+        'type' => 'Uyumluluk türü',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Onay sinyallerini Google Tag Manager / gtag\'e gönderir. Onay etiketi onlardan önce yüklenmelidir.',
+    ],
+
+    'types' => [
+        'info' => 'Yalnızca bildirim',
+        'opt-in' => 'Opt-in (çerezlerden önce sor)',
+        'opt-out' => 'Opt-out (reddedilene kadar çerez)',
     ],
 ];
