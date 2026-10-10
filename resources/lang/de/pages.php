@@ -29,6 +29,10 @@ return [
             'heading' => 'Layout',
             'description' => 'Konfigurieren Sie Position und Design des Cookie-Banners.',
         ],
+        'compliance' => [
+            'heading' => 'Compliance',
+            'description' => 'Legen Sie fest, wie Besucher zustimmen und ob Google-Tags Consent-Mode-v2-Signale erhalten.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS-URL',
@@ -54,5 +58,14 @@ return [
         'highlight_text' => 'Text',
         'position' => 'Position',
         'theme' => 'Design',
+        'type' => 'Compliance-Typ',
+        'consent_mode' => 'Google Consent Mode v2',
+        'consent_mode_help' => 'Sendet Einwilligungssignale an Google Tag Manager / gtag. Das Consent-Tag muss vorher geladen werden.',
+    ],
+
+    'types' => [
+        'info' => 'Nur Hinweis',
+        'opt-in' => 'Opt-in (vor Cookies fragen)',
+        'opt-out' => 'Opt-out (Cookies bis zur Ablehnung)',
     ],
 ];

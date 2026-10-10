@@ -46,3 +46,14 @@ it('injects the script into the panel once configured', function () {
 
     expect($html)->toContain('Cookies here');
 });
+
+it('saves the compliance type and consent mode', function () {
+    Livewire::test(ManageCookieConsentSettings::class)
+        ->fillForm(['type' => 'opt-in', 'consent_mode' => true])
+        ->call('save')
+        ->assertHasNoFormErrors();
+
+    $settings = app(CookieConsentSettings::class)->refresh();
+    expect($settings->type)->toBe('opt-in')
+        ->and($settings->consent_mode)->toBeTrue();
+});
