@@ -44,6 +44,8 @@ return [
         'content_deny' => 'İmtina düyməsinin mətni',
         'content_link' => 'Ətraflı keçidinin mətni',
         'content_href' => 'Məxfilik siyasəti URL',
+        'content_href_help' => '"Ətraflı" keçidini gizlətmək üçün boş buraxın.',
+        'translated_default_help' => 'Hər ziyarətçinin dilində tərcümə edilmiş standart mətndən istifadə etmək üçün boş buraxın.',
         'content_target' => 'Keçid hədəfi',
         'content_close' => 'Bağla düyməsinin mətni',
         'content_policy' => 'Kuki siyasəti mətni',

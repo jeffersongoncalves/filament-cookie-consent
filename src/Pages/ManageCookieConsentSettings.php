@@ -56,33 +56,22 @@ class ManageCookieConsentSettings extends SettingsPage
                 Section::make(__('filament-cookie-consent::pages.sections.content.heading'))
                     ->description(__('filament-cookie-consent::pages.sections.content.description'))
                     ->schema([
-                        TextInput::make('content_header')
-                            ->label(__('filament-cookie-consent::pages.fields.content_header'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_header'), 'header'),
 
-                        Textarea::make('content_message')
-                            ->label(__('filament-cookie-consent::pages.fields.content_message'))
-                            ->required()
+                        static::translatable(Textarea::make('content_message'), 'message')
                             ->columnSpanFull(),
 
-                        TextInput::make('content_dismiss')
-                            ->label(__('filament-cookie-consent::pages.fields.content_dismiss'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_dismiss'), 'dismiss'),
 
-                        TextInput::make('content_allow')
-                            ->label(__('filament-cookie-consent::pages.fields.content_allow'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_allow'), 'allow'),
 
-                        TextInput::make('content_deny')
-                            ->label(__('filament-cookie-consent::pages.fields.content_deny'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_deny'), 'deny'),
 
-                        TextInput::make('content_link')
-                            ->label(__('filament-cookie-consent::pages.fields.content_link'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_link'), 'link'),
 
                         TextInput::make('content_href')
                             ->label(__('filament-cookie-consent::pages.fields.content_href'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.content_href_help'))
                             ->url()
                             ->nullable(),
 
@@ -98,9 +87,7 @@ class ManageCookieConsentSettings extends SettingsPage
                             ->label(__('filament-cookie-consent::pages.fields.content_close'))
                             ->required(),
 
-                        TextInput::make('content_policy')
-                            ->label(__('filament-cookie-consent::pages.fields.content_policy'))
-                            ->required(),
+                        static::translatable(TextInput::make('content_policy'), 'policy'),
                     ])->columns(2),
 
                 Section::make(__('filament-cookie-consent::pages.sections.popup.heading'))
@@ -191,5 +178,17 @@ class ManageCookieConsentSettings extends SettingsPage
                             ->helperText(__('filament-cookie-consent::pages.fields.consent_mode_help')),
                     ])->columns(2),
             ]);
+    }
+
+    /**
+     * Banner text: empty stores null, which renders the cookie-consent::banner translation for the visitor's locale.
+     */
+    protected static function translatable(TextInput|Textarea $field, string $key): TextInput|Textarea
+    {
+        return $field
+            ->label(__("filament-cookie-consent::pages.fields.content_{$key}"))
+            ->placeholder(__("cookie-consent::banner.{$key}"))
+            ->helperText(__('filament-cookie-consent::pages.fields.translated_default_help'))
+            ->nullable();
     }
 }

@@ -46,6 +46,8 @@ return [
         'content_deny' => 'Texto do Botão Recusar',
         'content_link' => 'Texto do Link Saiba Mais',
         'content_href' => 'URL da Política de Privacidade',
+        'content_href_help' => 'Deixe em branco para ocultar o link "saiba mais".',
+        'translated_default_help' => 'Deixe em branco para usar o texto padrão traduzido no idioma de cada visitante.',
         'content_target' => 'Destino do Link',
         'content_close' => 'Texto do Botão Fechar',
         'content_policy' => 'Texto da Política de Cookies',

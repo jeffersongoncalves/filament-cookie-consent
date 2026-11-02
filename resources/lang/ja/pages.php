@@ -44,6 +44,8 @@ return [
         'content_deny' => '拒否ボタンのテキスト',
         'content_link' => '詳細リンクのテキスト',
         'content_href' => 'プライバシーポリシーの URL',
+        'content_href_help' => '「詳細」リンクを非表示にするには空欄のままにします。',
+        'translated_default_help' => '空欄のままにすると、訪問者の言語に翻訳された既定のテキストが使用されます。',
         'content_target' => 'リンクのターゲット',
         'content_close' => '閉じるボタンのテキスト',
         'content_policy' => 'Cookie ポリシーのテキスト',

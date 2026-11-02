@@ -44,6 +44,8 @@ return [
         'content_deny' => 'نص زر الرفض',
         'content_link' => 'نص رابط معرفة المزيد',
         'content_href' => 'رابط سياسة الخصوصية',
+        'content_href_help' => 'اتركه فارغًا لإخفاء رابط "اعرف المزيد".',
+        'translated_default_help' => 'اتركه فارغًا لاستخدام النص الافتراضي المترجم بلغة كل زائر.',
         'content_target' => 'هدف الرابط',
         'content_close' => 'نص زر الإغلاق',
         'content_policy' => 'نص سياسة ملفات تعريف الارتباط',

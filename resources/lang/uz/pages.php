@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Rad etish tugmasi matni',
         'content_link' => 'Batafsil havolasi matni',
         'content_href' => 'Maxfiylik siyosati URL',
+        'content_href_help' => '"Batafsil" havolasini yashirish uchun boʻsh qoldiring.',
+        'translated_default_help' => 'Har bir tashrif buyuruvchi tilidagi tarjima qilingan standart matndan foydalanish uchun boʻsh qoldiring.',
         'content_target' => 'Havola maqsadi',
         'content_close' => 'Yopish tugmasi matni',
         'content_policy' => 'Cookie siyosati matni',
