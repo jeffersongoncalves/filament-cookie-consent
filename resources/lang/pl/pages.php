@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Tekst przycisku odmowy',
         'content_link' => 'Tekst linku Dowiedz się więcej',
         'content_href' => 'Adres URL polityki prywatności',
+        'content_href_help' => 'Pozostaw puste, aby ukryć link „dowiedz się więcej”.',
+        'translated_default_help' => 'Pozostaw puste, aby użyć przetłumaczonego tekstu domyślnego w języku odwiedzającego.',
         'content_target' => 'Cel linku',
         'content_close' => 'Tekst przycisku zamknięcia',
         'content_policy' => 'Tekst polityki cookie',

@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Texto del botón de rechazar',
         'content_link' => 'Texto del enlace Más información',
         'content_href' => 'URL de la política de privacidad',
+        'content_href_help' => 'Déjalo vacío para ocultar el enlace "más información".',
+        'translated_default_help' => 'Déjalo vacío para usar el texto predeterminado traducido al idioma de cada visitante.',
         'content_target' => 'Destino del enlace',
         'content_close' => 'Texto del botón de cerrar',
         'content_policy' => 'Texto de la política de cookies',

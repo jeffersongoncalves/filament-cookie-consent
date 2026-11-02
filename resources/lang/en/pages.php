@@ -46,6 +46,8 @@ return [
         'content_deny' => 'Deny Button Text',
         'content_link' => 'Learn More Link Text',
         'content_href' => 'Privacy Policy URL',
+        'content_href_help' => 'Leave empty to hide the "learn more" link.',
+        'translated_default_help' => 'Leave empty to use the translated default for each visitor\'s language.',
         'content_target' => 'Link Target',
         'content_close' => 'Close Button Text',
         'content_policy' => 'Cookie Policy Text',

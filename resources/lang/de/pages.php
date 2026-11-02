@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Text der Ablehnen-Schaltfläche',
         'content_link' => 'Text des „Mehr erfahren“-Links',
         'content_href' => 'URL der Datenschutzerklärung',
+        'content_href_help' => 'Leer lassen, um den „Mehr erfahren“-Link auszublenden.',
+        'translated_default_help' => 'Leer lassen, um den übersetzten Standardtext in der Sprache des Besuchers zu verwenden.',
         'content_target' => 'Link-Ziel',
         'content_close' => 'Text der Schließen-Schaltfläche',
         'content_policy' => 'Text der Cookie-Richtlinie',
