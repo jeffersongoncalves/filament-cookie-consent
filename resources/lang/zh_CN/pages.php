@@ -44,6 +44,8 @@ return [
         'content_deny' => '拒绝按钮文本',
         'content_link' => '了解更多链接文本',
         'content_href' => '隐私政策 URL',
+        'content_href_help' => '留空以隐藏“了解更多”链接。',
+        'translated_default_help' => '留空以使用按访客语言翻译的默认文本。',
         'content_target' => '链接目标',
         'content_close' => '关闭按钮文本',
         'content_policy' => 'Cookie 政策文本',

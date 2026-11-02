@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Tekst van weigerknop',
         'content_link' => 'Tekst van \'Meer informatie\'-link',
         'content_href' => 'URL van privacybeleid',
+        'content_href_help' => 'Laat leeg om de link "meer informatie" te verbergen.',
+        'translated_default_help' => 'Laat leeg om de vertaalde standaardtekst in de taal van elke bezoeker te gebruiken.',
         'content_target' => 'Linkdoel',
         'content_close' => 'Tekst van sluitknop',
         'content_policy' => 'Tekst van cookiebeleid',
