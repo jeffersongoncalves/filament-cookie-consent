@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Texte du bouton Refuser',
         'content_link' => 'Texte du lien En savoir plus',
         'content_href' => 'URL de la politique de confidentialité',
+        'content_href_help' => 'Laissez vide pour masquer le lien « en savoir plus ».',
+        'translated_default_help' => 'Laissez vide pour utiliser le texte par défaut traduit dans la langue de chaque visiteur.',
         'content_target' => 'Cible du lien',
         'content_close' => 'Texte du bouton Fermer',
         'content_policy' => 'Texte de la politique de cookies',

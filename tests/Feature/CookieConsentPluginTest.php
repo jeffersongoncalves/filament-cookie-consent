@@ -34,6 +34,29 @@ it('saves the settings from the page', function () {
     expect($settings->content_header)->toBe('Cookies here');
 });
 
+it('saves empty banner text as null so the translation is used', function () {
+    $fields = ['content_header', 'content_message', 'content_dismiss', 'content_allow', 'content_deny', 'content_link', 'content_policy'];
+
+    Livewire::test(ManageCookieConsentSettings::class)
+        ->fillForm(array_fill_keys($fields, ''))
+        ->call('save')
+        ->assertHasNoFormErrors();
+
+    $settings = app(CookieConsentSettings::class)->refresh();
+    foreach ($fields as $field) {
+        expect($settings->{$field})->toBeNull();
+    }
+});
+
+it('shows the translated default as placeholder', function () {
+    app()->setLocale('pt_BR');
+
+    Livewire::test(ManageCookieConsentSettings::class)
+        ->assertSee(__('cookie-consent::banner.header'));
+
+    expect(__('cookie-consent::banner.header'))->not->toBe(trans('cookie-consent::banner.header', [], 'en'));
+});
+
 it('injects the script into the panel once configured', function () {
     $settings = app(CookieConsentSettings::class);
     $settings->content_header = 'Cookies here';
