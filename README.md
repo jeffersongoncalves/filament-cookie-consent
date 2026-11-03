@@ -101,7 +101,7 @@ Once registered, the plugin adds a **Cookie Consent Settings** page to your Fila
 Header, message, dismiss, allow, deny, "learn more" and cookie policy texts are optional. Leave one empty to show the [laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent) translation in each visitor's language; a filled value overrides it in every locale. Leaving the privacy policy URL empty hides the "learn more" link.
 
 > [!IMPORTANT]
-> If your app published the laravel-cookie-consent views before 4.3 (`resources/views/vendor/cookie-consent/cookie-consent-body.blade.php`), replace them with the 4.3 view (`php artisan vendor:publish --tag=cookie-consent-views --force`) or merge its `?? __('cookie-consent::banner.*')` fallbacks into your copy. The old view prints empty fields as blank text instead of the translation.
+> If your app published the laravel-cookie-consent views before 4.3, update `resources/views/vendor/cookie-consent/cookie-consent-body.blade.php`: copy only that file from `vendor/jeffersongoncalves/laravel-cookie-consent/resources/views/`, or merge its `?? __('cookie-consent::banner.*')` fallbacks into your copy. The old view prints empty fields as blank text instead of the translation. Avoid `php artisan vendor:publish --tag=cookie-consent-views --force` unless you back up first: it overwrites every published view, including a customised `cookie-consent-head.blade.php`.
 
 ### Disabling the Settings Page
 
