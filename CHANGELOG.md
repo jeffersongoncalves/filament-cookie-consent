@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.8.0 - 2026-11-02
+
+### Changed
+
+- **Translated banner text.** Header, message, dismiss, allow, deny, "learn more" and cookie policy fields are now optional. Leave one empty to show the [laravel-cookie-consent 4.3](https://github.com/jeffersongoncalves/laravel-cookie-consent/releases/tag/4.3.0) translation in each visitor's language; a filled value overrides it in every locale. The translated default appears as placeholder. Leaving the privacy policy URL empty hides the "learn more" link. (#59)
+- Requires `jeffersongoncalves/laravel-cookie-consent:^4.3`.
+
+### Upgrade
+
+Run `php artisan migrate`: the upstream settings migration sets text still equal to the old English defaults to `null`. Customised text is kept.
+
+If your app published the laravel-cookie-consent views before 4.3, update `resources/views/vendor/cookie-consent/cookie-consent-body.blade.php` (copy only that file from the package, or merge its `?? __('cookie-consent::banner.*')` fallbacks). Avoid `vendor:publish --tag=cookie-consent-views --force` without a backup: it overwrites every published view.
+
 ## 3.7.0 - 2026-10-10
 
 Adds a **Compliance** section to the settings page for the settings introduced in [laravel-cookie-consent 4.2.0](https://github.com/jeffersongoncalves/laravel-cookie-consent/releases/tag/4.2.0):
