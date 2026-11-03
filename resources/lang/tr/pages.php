@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Reddet düğmesi metni',
         'content_link' => 'Daha fazla bilgi bağlantı metni',
         'content_href' => 'Gizlilik politikası URL\'si',
+        'content_href_help' => '"Daha fazla bilgi" bağlantısını gizlemek için boş bırakın.',
+        'translated_default_help' => 'Her ziyaretçinin dilinde çevrilmiş varsayılan metni kullanmak için boş bırakın.',
         'content_target' => 'Bağlantı hedefi',
         'content_close' => 'Kapatma düğmesi metni',
         'content_policy' => 'Çerez politikası metni',

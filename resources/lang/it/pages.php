@@ -44,6 +44,8 @@ return [
         'content_deny' => 'Testo del pulsante Rifiuta',
         'content_link' => 'Testo del link Scopri di più',
         'content_href' => 'URL dell\'informativa sulla privacy',
+        'content_href_help' => 'Lascia vuoto per nascondere il link "scopri di più".',
+        'translated_default_help' => 'Lascia vuoto per usare il testo predefinito tradotto nella lingua di ogni visitatore.',
         'content_target' => 'Destinazione del link',
         'content_close' => 'Testo del pulsante Chiudi',
         'content_policy' => 'Testo della cookie policy',
