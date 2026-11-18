@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.10.0 - 2026-11-17
+
+Settings page for the laravel-cookie-consent 4.6 features: allow-or-decline banner or a choice per cookie category, block the analytics, marketing and chat scripts until their category is allowed, honor Global Privacy Control, per-script category overrides, and the preferences banner CSS/JS URLs. Requires laravel-cookie-consent ^4.6. 19 locales.
+
 ## 1.9.0 - 2026-11-02
 
 ### Changed
