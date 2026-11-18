@@ -33,6 +33,10 @@ return [
             'heading' => 'Conformità',
             'description' => 'Scegli come i visitatori danno il consenso e se i tag Google ricevono i segnali di Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Script e categorie',
+            'description' => 'Trattieni gli script di statistica, marketing e chat finché il visitatore non consente la loro categoria.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Tipo di conformità',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Invia i segnali di consenso a Google Tag Manager / gtag. Il tag del consenso deve essere caricato prima.',
+        'preferences_css_url' => 'URL del CSS del banner delle preferenze',
+        'preferences_js_url' => 'URL del JavaScript del banner delle preferenze',
+        'mode' => 'Banner',
+        'mode_help' => 'Una scelta per categoria mostra Accetta tutto, Rifiuta tutto e un interruttore per ogni categoria di cookie.',
+        'block_scripts' => 'Blocca gli script fino al consenso',
+        'block_scripts_help' => 'Gli script dei pacchetti di statistica e chat vengono eseguiti solo quando la loro categoria è consentita.',
+        'honor_gpc' => 'Rispetta Global Privacy Control',
+        'honor_gpc_help' => 'Un segnale Global Privacy Control rifiuta la categoria marketing, come richiede il CCPA.',
+        'script_categories' => 'Categorie degli script',
+        'script_categories_help' => 'Cambia la categoria di uno script (:scripts) in una di :categories, oppure lasciala vuota per non bloccarlo mai.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Categoria',
     ],
 
     'types' => [
         'info' => 'Solo avviso',
         'opt-in' => 'Opt-in (chiedere prima dei cookie)',
         'opt-out' => 'Opt-out (cookie fino al rifiuto)',
+    ],
+
+    'modes' => [
+        'banner' => 'Consenti o rifiuta',
+        'categories' => 'Una scelta per categoria',
     ],
 ];

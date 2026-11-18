@@ -33,6 +33,10 @@ return [
             'heading' => 'Compliance',
             'description' => 'Legen Sie fest, wie Besucher zustimmen und ob Google-Tags Consent-Mode-v2-Signale erhalten.',
         ],
+        'scripts' => [
+            'heading' => 'Skripte und Kategorien',
+            'description' => 'Hält Statistik-, Marketing- und Chat-Skripte zurück, bis der Besucher ihre Kategorie erlaubt.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS-URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'Compliance-Typ',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Sendet Einwilligungssignale an Google Tag Manager / gtag. Das Consent-Tag muss vorher geladen werden.',
+        'preferences_css_url' => 'CSS-URL des Einstellungsbanners',
+        'preferences_js_url' => 'JavaScript-URL des Einstellungsbanners',
+        'mode' => 'Banner',
+        'mode_help' => 'Eine Auswahl pro Kategorie zeigt Alle akzeptieren, Alle ablehnen und einen Schalter je Cookie-Kategorie.',
+        'block_scripts' => 'Skripte bis zur Einwilligung blockieren',
+        'block_scripts_help' => 'Skripte der Statistik- und Chat-Pakete laufen erst, wenn ihre Kategorie erlaubt ist.',
+        'honor_gpc' => 'Global Privacy Control beachten',
+        'honor_gpc_help' => 'Ein Global-Privacy-Control-Signal lehnt die Marketing-Kategorie ab, wie es der CCPA verlangt.',
+        'script_categories' => 'Skript-Kategorien',
+        'script_categories_help' => 'Ändern Sie die Kategorie eines Skripts (:scripts) in eine von :categories oder lassen Sie sie leer, um es nie zu blockieren.',
+        'script_categories_key' => 'Skript',
+        'script_categories_value' => 'Kategorie',
     ],
 
     'types' => [
         'info' => 'Nur Hinweis',
         'opt-in' => 'Opt-in (vor Cookies fragen)',
         'opt-out' => 'Opt-out (Cookies bis zur Ablehnung)',
+    ],
+
+    'modes' => [
+        'banner' => 'Erlauben oder ablehnen',
+        'categories' => 'Eine Auswahl pro Kategorie',
     ],
 ];
