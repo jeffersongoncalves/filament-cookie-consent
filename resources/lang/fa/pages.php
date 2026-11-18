@@ -33,6 +33,10 @@ return [
             'heading' => 'انطباق',
             'description' => 'انتخاب کنید بازدیدکنندگان چگونه رضایت دهند و آیا برچسب‌های Google سیگنال‌های Consent Mode v2 را دریافت کنند.',
         ],
+        'scripts' => [
+            'heading' => 'اسکریپت‌ها و دسته‌ها',
+            'description' => 'اسکریپت‌های تحلیلی، بازاریابی و گفتگو را تا زمانی که بازدیدکننده دسته آن‌ها را مجاز کند نگه دارید.',
+        ],
     ],
     'fields' => [
         'css_url' => 'آدرس CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'نوع انطباق',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'سیگنال‌های رضایت را به Google Tag Manager / gtag می‌فرستد. برچسب رضایت باید پیش از آن‌ها بارگذاری شود.',
+        'preferences_css_url' => 'نشانی CSS بنر ترجیحات',
+        'preferences_js_url' => 'نشانی JavaScript بنر ترجیحات',
+        'mode' => 'بنر',
+        'mode_help' => 'انتخاب برای هر دسته، گزینه‌های پذیرش همه، رد همه و یک کلید برای هر دسته کوکی را نشان می‌دهد.',
+        'block_scripts' => 'مسدود کردن اسکریپت‌ها تا رضایت',
+        'block_scripts_help' => 'اسکریپت‌های بسته‌های تحلیلی و گفتگو تنها پس از مجاز شدن دسته‌شان اجرا می‌شوند.',
+        'honor_gpc' => 'رعایت Global Privacy Control',
+        'honor_gpc_help' => 'سیگنال Global Privacy Control همان‌طور که CCPA الزام می‌کند دسته بازاریابی را رد می‌کند.',
+        'script_categories' => 'دسته‌های اسکریپت',
+        'script_categories_help' => 'دسته یک اسکریپت (:scripts) را به یکی از :categories تغییر دهید یا برای هرگز مسدود نشدن خالی بگذارید.',
+        'script_categories_key' => 'اسکریپت',
+        'script_categories_value' => 'دسته',
     ],
 
     'types' => [
         'info' => 'فقط اطلاع‌رسانی',
         'opt-in' => 'Opt-in (پرسیدن پیش از کوکی‌ها)',
         'opt-out' => 'Opt-out (کوکی تا زمان رد)',
+    ],
+
+    'modes' => [
+        'banner' => 'اجازه یا رد',
+        'categories' => 'انتخاب برای هر دسته',
     ],
 ];

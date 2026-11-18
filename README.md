@@ -95,6 +95,8 @@ Once registered, the plugin adds a **Cookie Consent Settings** page to your Fila
 - **Button Colors**: Background, border, and text colors
 - **Highlight Colors**: Background, border, and text colors
 - **Layout**: Banner position and theme
+- **Compliance**: Compliance type (notice, opt-in, opt-out) and Google Consent Mode v2
+- **Scripts and categories**: Allow-or-decline banner or a choice per cookie category, blocking the analytics, marketing and chat scripts until their category is allowed, Global Privacy Control, and per-script category overrides (see [laravel-cookie-consent](https://github.com/jeffersongoncalves/laravel-cookie-consent#blocking-scripts-until-consent))
 
 ### Translated banner text
 

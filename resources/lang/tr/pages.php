@@ -33,6 +33,10 @@ return [
             'heading' => 'Uyumluluk',
             'description' => 'Ziyaretçilerin nasıl onay vereceğini ve Google etiketlerinin Consent Mode v2 sinyallerini alıp almayacağını seçin.',
         ],
+        'scripts' => [
+            'heading' => 'Betikler ve kategoriler',
+            'description' => 'Analitik, pazarlama ve sohbet betiklerini ziyaretçi kategorilerine izin verene kadar bekletin.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'Uyumluluk türü',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Onay sinyallerini Google Tag Manager / gtag\'e gönderir. Onay etiketi onlardan önce yüklenmelidir.',
+        'preferences_css_url' => 'Tercih banner\'ı CSS URL\'si',
+        'preferences_js_url' => 'Tercih banner\'ı JavaScript URL\'si',
+        'mode' => 'Banner',
+        'mode_help' => 'Kategori başına seçim; Tümünü kabul et, Tümünü reddet ve her çerez kategorisi için bir anahtar gösterir.',
+        'block_scripts' => 'Onaya kadar betikleri engelle',
+        'block_scripts_help' => 'Analitik ve sohbet paketlerinin betikleri yalnızca kategorilerine izin verildiğinde çalışır.',
+        'honor_gpc' => 'Global Privacy Control\'e uy',
+        'honor_gpc_help' => 'Global Privacy Control sinyali, CCPA\'nın gerektirdiği gibi pazarlama kategorisini reddeder.',
+        'script_categories' => 'Betik kategorileri',
+        'script_categories_help' => 'Bir betiğin (:scripts) kategorisini :categories içinden biriyle değiştirin veya hiç engellenmemesi için boş bırakın.',
+        'script_categories_key' => 'Betik',
+        'script_categories_value' => 'Kategori',
     ],
 
     'types' => [
         'info' => 'Yalnızca bildirim',
         'opt-in' => 'Opt-in (çerezlerden önce sor)',
         'opt-out' => 'Opt-out (reddedilene kadar çerez)',
+    ],
+
+    'modes' => [
+        'banner' => 'İzin ver veya reddet',
+        'categories' => 'Kategori başına seçim',
     ],
 ];

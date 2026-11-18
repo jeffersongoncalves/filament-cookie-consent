@@ -33,6 +33,10 @@ return [
             'heading' => 'Conformidade',
             'description' => 'Defina como o visitante consente e se as etiquetas da Google recebem os sinais do Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Scripts e categorias',
+            'description' => 'Retenha scripts de análise, marketing e chat até o visitante permitir a respetiva categoria.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL do CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Tipo de conformidade',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Envia os sinais de consentimento ao Google Tag Manager / gtag. A etiqueta de consentimento tem de carregar antes deles.',
+        'preferences_css_url' => 'URL do CSS do banner de preferências',
+        'preferences_js_url' => 'URL do JavaScript do banner de preferências',
+        'mode' => 'Banner',
+        'mode_help' => 'Uma escolha por categoria mostra Aceitar tudo, Rejeitar tudo e um interruptor para cada categoria de cookies.',
+        'block_scripts' => 'Bloquear scripts até ao consentimento',
+        'block_scripts_help' => 'Os scripts dos pacotes de análise e chat só são executados depois de a sua categoria ser permitida.',
+        'honor_gpc' => 'Respeitar o Global Privacy Control',
+        'honor_gpc_help' => 'Um sinal Global Privacy Control recusa a categoria de marketing, como exige a CCPA.',
+        'script_categories' => 'Categorias dos scripts',
+        'script_categories_help' => 'Altere a categoria de um script (:scripts) para uma de :categories, ou deixe vazio para nunca o bloquear.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Categoria',
     ],
 
     'types' => [
         'info' => 'Apenas aviso',
         'opt-in' => 'Opt-in (pedir antes de usar cookies)',
         'opt-out' => 'Opt-out (cookies até recusar)',
+    ],
+
+    'modes' => [
+        'banner' => 'Permitir ou recusar',
+        'categories' => 'Uma escolha por categoria',
     ],
 ];

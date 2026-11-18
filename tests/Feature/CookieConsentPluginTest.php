@@ -80,3 +80,22 @@ it('saves the compliance type and consent mode', function () {
     expect($settings->type)->toBe('opt-in')
         ->and($settings->consent_mode)->toBeTrue();
 });
+
+it('saves the script blocking and category settings', function () {
+    Livewire::test(ManageCookieConsentSettings::class)
+        ->fillForm([
+            'mode' => 'categories',
+            'block_scripts' => true,
+            'honor_gpc' => true,
+            'script_categories' => ['plausible' => 'analytics'],
+        ])
+        ->call('save')
+        ->assertHasNoFormErrors();
+
+    $settings = app(CookieConsentSettings::class)->refresh();
+    expect($settings->mode)->toBe('categories')
+        ->and($settings->block_scripts)->toBeTrue()
+        ->and($settings->honor_gpc)->toBeTrue()
+        ->and($settings->script_categories)->toBe(['plausible' => 'analytics'])
+        ->and(cookie_consent_script_attributes('plausible'))->toContain('data-category="analytics"');
+});
