@@ -33,6 +33,10 @@ return [
             'heading' => 'الامتثال',
             'description' => 'اختر كيف يوافق الزوار وما إذا كانت علامات Google تتلقى إشارات Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'البرامج النصية والفئات',
+            'description' => 'احتجز برامج التحليلات والتسويق والدردشة حتى يسمح الزائر بفئتها.',
+        ],
     ],
     'fields' => [
         'css_url' => 'رابط CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'نوع الامتثال',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'يرسل إشارات الموافقة إلى Google Tag Manager / gtag. يجب تحميل علامة الموافقة قبلها.',
+        'preferences_css_url' => 'رابط CSS لشريط التفضيلات',
+        'preferences_js_url' => 'رابط JavaScript لشريط التفضيلات',
+        'mode' => 'الشريط',
+        'mode_help' => 'يعرض الاختيار لكل فئة: قبول الكل ورفض الكل ومفتاحًا لكل فئة من ملفات تعريف الارتباط.',
+        'block_scripts' => 'حظر البرامج النصية حتى الموافقة',
+        'block_scripts_help' => 'لا تعمل البرامج النصية لحزم التحليلات والدردشة إلا بعد السماح بفئتها.',
+        'honor_gpc' => 'احترام Global Privacy Control',
+        'honor_gpc_help' => 'إشارة Global Privacy Control ترفض فئة التسويق كما يتطلب CCPA.',
+        'script_categories' => 'فئات البرامج النصية',
+        'script_categories_help' => 'غيّر فئة برنامج نصي (:scripts) إلى إحدى :categories، أو اتركها فارغة حتى لا يُحظر أبدًا.',
+        'script_categories_key' => 'البرنامج النصي',
+        'script_categories_value' => 'الفئة',
     ],
 
     'types' => [
         'info' => 'إشعار فقط',
         'opt-in' => 'Opt-in (السؤال قبل ملفات تعريف الارتباط)',
         'opt-out' => 'Opt-out (ملفات تعريف الارتباط حتى الرفض)',
+    ],
+
+    'modes' => [
+        'banner' => 'السماح أو الرفض',
+        'categories' => 'اختيار لكل فئة',
     ],
 ];
