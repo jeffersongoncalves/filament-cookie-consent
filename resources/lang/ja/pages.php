@@ -33,6 +33,10 @@ return [
             'heading' => 'コンプライアンス',
             'description' => '訪問者の同意方法と、Google タグに Consent Mode v2 のシグナルを送るかを選択します。',
         ],
+        'scripts' => [
+            'heading' => 'スクリプトとカテゴリ',
+            'description' => '訪問者がカテゴリを許可するまで、分析・マーケティング・チャットのスクリプトを保留します。',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'コンプライアンスの種類',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => '同意シグナルを Google Tag Manager / gtag に送信します。同意タグはそれらより先に読み込む必要があります。',
+        'preferences_css_url' => '設定バナーの CSS URL',
+        'preferences_js_url' => '設定バナーの JavaScript URL',
+        'mode' => 'バナー',
+        'mode_help' => 'カテゴリごとの選択では、「すべて許可」「すべて拒否」と Cookie カテゴリごとのスイッチを表示します。',
+        'block_scripts' => '同意までスクリプトをブロック',
+        'block_scripts_help' => '分析・チャットパッケージのスクリプトは、カテゴリが許可されてから実行されます。',
+        'honor_gpc' => 'Global Privacy Control を尊重',
+        'honor_gpc_help' => 'Global Privacy Control シグナルは、CCPA の要件どおりマーケティングカテゴリを拒否します。',
+        'script_categories' => 'スクリプトのカテゴリ',
+        'script_categories_help' => 'スクリプト（:scripts）のカテゴリを :categories のいずれかに変更します。空にすると常にブロックしません。',
+        'script_categories_key' => 'スクリプト',
+        'script_categories_value' => 'カテゴリ',
     ],
 
     'types' => [
         'info' => '通知のみ',
         'opt-in' => 'オプトイン（Cookie の前に確認）',
         'opt-out' => 'オプトアウト（拒否されるまで Cookie）',
+    ],
+
+    'modes' => [
+        'banner' => '許可または拒否',
+        'categories' => 'カテゴリごとの選択',
     ],
 ];

@@ -33,6 +33,10 @@ return [
             'heading' => 'Cumplimiento',
             'description' => 'Elige cómo consienten los visitantes y si las etiquetas de Google reciben las señales de Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Scripts y categorías',
+            'description' => 'Retén los scripts de analítica, marketing y chat hasta que el visitante permita su categoría.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL de CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Tipo de cumplimiento',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Envía las señales de consentimiento a Google Tag Manager / gtag. La etiqueta de consentimiento debe cargarse antes.',
+        'preferences_css_url' => 'URL del CSS del banner de preferencias',
+        'preferences_js_url' => 'URL del JavaScript del banner de preferencias',
+        'mode' => 'Banner',
+        'mode_help' => 'Una elección por categoría muestra Aceptar todo, Rechazar todo y un interruptor para cada categoría de cookies.',
+        'block_scripts' => 'Bloquear scripts hasta el consentimiento',
+        'block_scripts_help' => 'Los scripts de los paquetes de analítica y chat solo se ejecutan cuando se permite su categoría.',
+        'honor_gpc' => 'Respetar Global Privacy Control',
+        'honor_gpc_help' => 'Una señal Global Privacy Control rechaza la categoría de marketing, como exige la CCPA.',
+        'script_categories' => 'Categorías de los scripts',
+        'script_categories_help' => 'Cambia la categoría de un script (:scripts) a una de :categories, o déjala vacía para no bloquearlo nunca.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Categoría',
     ],
 
     'types' => [
         'info' => 'Solo aviso',
         'opt-in' => 'Opt-in (preguntar antes de usar cookies)',
         'opt-out' => 'Opt-out (cookies hasta rechazar)',
+    ],
+
+    'modes' => [
+        'banner' => 'Permitir o rechazar',
+        'categories' => 'Una elección por categoría',
     ],
 ];
