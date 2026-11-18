@@ -34,6 +34,10 @@ return [
             'heading' => 'Compliance',
             'description' => 'Choose how visitors consent and whether Google tags receive Consent Mode v2 signals.',
         ],
+        'scripts' => [
+            'heading' => 'Scripts and categories',
+            'description' => 'Hold analytics, marketing and chat scripts until the visitor allows their category.',
+        ],
     ],
 
     'fields' => [
@@ -65,11 +69,28 @@ return [
         'type' => 'Compliance type',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Sends consent signals to Google Tag Manager / gtag. The cookie consent head tag must load before them.',
+        'preferences_css_url' => 'Preferences banner CSS URL',
+        'preferences_js_url' => 'Preferences banner JavaScript URL',
+        'mode' => 'Banner',
+        'mode_help' => 'A choice per category shows Accept all, Reject all and a toggle for each cookie category.',
+        'block_scripts' => 'Block scripts until consent',
+        'block_scripts_help' => 'Scripts of the analytics and chat packages run only once their category is allowed.',
+        'honor_gpc' => 'Honor Global Privacy Control',
+        'honor_gpc_help' => 'A Global Privacy Control signal refuses the marketing category, as the CCPA requires.',
+        'script_categories' => 'Script categories',
+        'script_categories_help' => 'Change the category of a script (:scripts) to one of :categories, or leave it empty to never block it.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Category',
     ],
 
     'types' => [
         'info' => 'Notice only',
         'opt-in' => 'Opt-in (ask before setting cookies)',
         'opt-out' => 'Opt-out (cookies until declined)',
+    ],
+
+    'modes' => [
+        'banner' => 'Allow or decline',
+        'categories' => 'A choice per category',
     ],
 ];

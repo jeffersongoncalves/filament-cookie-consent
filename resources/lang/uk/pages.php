@@ -33,6 +33,10 @@ return [
             'heading' => 'Відповідність',
             'description' => 'Оберіть, як відвідувачі надають згоду і чи отримують теги Google сигнали Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Скрипти та категорії',
+            'description' => 'Затримуйте скрипти аналітики, маркетингу та чату, доки відвідувач не дозволить їхню категорію.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Тип відповідності',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Надсилає сигнали згоди до Google Tag Manager / gtag. Тег згоди має завантажуватися раніше.',
+        'preferences_css_url' => 'URL CSS банера налаштувань',
+        'preferences_js_url' => 'URL JavaScript банера налаштувань',
+        'mode' => 'Банер',
+        'mode_help' => 'Вибір за категоріями показує «Прийняти все», «Відхилити все» і перемикач для кожної категорії cookie.',
+        'block_scripts' => 'Блокувати скрипти до згоди',
+        'block_scripts_help' => 'Скрипти пакетів аналітики та чату запускаються лише після дозволу їхньої категорії.',
+        'honor_gpc' => 'Враховувати Global Privacy Control',
+        'honor_gpc_help' => 'Сигнал Global Privacy Control відхиляє категорію маркетингу, як вимагає CCPA.',
+        'script_categories' => 'Категорії скриптів',
+        'script_categories_help' => 'Змініть категорію скрипта (:scripts) на одну з :categories або залиште порожньою, щоб ніколи його не блокувати.',
+        'script_categories_key' => 'Скрипт',
+        'script_categories_value' => 'Категорія',
     ],
 
     'types' => [
         'info' => 'Лише повідомлення',
         'opt-in' => 'Opt-in (питати до cookies)',
         'opt-out' => 'Opt-out (cookies до відмови)',
+    ],
+
+    'modes' => [
+        'banner' => 'Дозволити або відхилити',
+        'categories' => 'Вибір за категоріями',
     ],
 ];

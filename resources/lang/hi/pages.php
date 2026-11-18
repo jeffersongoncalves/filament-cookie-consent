@@ -33,6 +33,10 @@ return [
             'heading' => 'अनुपालन',
             'description' => 'चुनें कि आगंतुक कैसे सहमति दें और क्या Google टैग Consent Mode v2 संकेत प्राप्त करें।',
         ],
+        'scripts' => [
+            'heading' => 'स्क्रिप्ट और श्रेणियाँ',
+            'description' => 'जब तक आगंतुक उनकी श्रेणी की अनुमति न दे, विश्लेषण, मार्केटिंग और चैट स्क्रिप्ट रोके रखें।',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'अनुपालन प्रकार',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'सहमति संकेत Google Tag Manager / gtag को भेजता है। सहमति टैग उनसे पहले लोड होना चाहिए।',
+        'preferences_css_url' => 'प्राथमिकता बैनर का CSS URL',
+        'preferences_js_url' => 'प्राथमिकता बैनर का JavaScript URL',
+        'mode' => 'बैनर',
+        'mode_help' => 'हर श्रेणी के लिए चुनाव में सभी स्वीकारें, सभी अस्वीकारें और हर कुकी श्रेणी के लिए एक स्विच दिखता है।',
+        'block_scripts' => 'सहमति तक स्क्रिप्ट रोकें',
+        'block_scripts_help' => 'विश्लेषण और चैट पैकेज की स्क्रिप्ट केवल उनकी श्रेणी की अनुमति मिलने पर चलती हैं।',
+        'honor_gpc' => 'Global Privacy Control का सम्मान करें',
+        'honor_gpc_help' => 'Global Privacy Control संकेत CCPA की आवश्यकता के अनुसार मार्केटिंग श्रेणी को अस्वीकार करता है।',
+        'script_categories' => 'स्क्रिप्ट श्रेणियाँ',
+        'script_categories_help' => 'किसी स्क्रिप्ट (:scripts) की श्रेणी को :categories में से किसी एक में बदलें, या उसे कभी न रोकने के लिए खाली छोड़ें।',
+        'script_categories_key' => 'स्क्रिप्ट',
+        'script_categories_value' => 'श्रेणी',
     ],
 
     'types' => [
         'info' => 'केवल सूचना',
         'opt-in' => 'Opt-in (कुकीज़ से पहले पूछें)',
         'opt-out' => 'Opt-out (अस्वीकार करने तक कुकीज़)',
+    ],
+
+    'modes' => [
+        'banner' => 'अनुमति दें या अस्वीकारें',
+        'categories' => 'हर श्रेणी के लिए चुनाव',
     ],
 ];

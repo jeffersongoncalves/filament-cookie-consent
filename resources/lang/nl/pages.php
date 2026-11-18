@@ -33,6 +33,10 @@ return [
             'heading' => 'Naleving',
             'description' => 'Kies hoe bezoekers toestemming geven en of Google-tags Consent Mode v2-signalen ontvangen.',
         ],
+        'scripts' => [
+            'heading' => 'Scripts en categorieën',
+            'description' => 'Houd analyse-, marketing- en chatscripts tegen tot de bezoeker hun categorie toestaat.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS-URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'Nalevingstype',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Stuurt toestemmingssignalen naar Google Tag Manager / gtag. De toestemmingstag moet eerder laden.',
+        'preferences_css_url' => 'CSS-URL van de voorkeurenbanner',
+        'preferences_js_url' => 'JavaScript-URL van de voorkeurenbanner',
+        'mode' => 'Banner',
+        'mode_help' => 'Een keuze per categorie toont Alles accepteren, Alles weigeren en een schakelaar per cookiecategorie.',
+        'block_scripts' => 'Scripts blokkeren tot toestemming',
+        'block_scripts_help' => 'Scripts van de analyse- en chatpakketten draaien pas als hun categorie is toegestaan.',
+        'honor_gpc' => 'Global Privacy Control respecteren',
+        'honor_gpc_help' => 'Een Global Privacy Control-signaal weigert de marketingcategorie, zoals de CCPA vereist.',
+        'script_categories' => 'Scriptcategorieën',
+        'script_categories_help' => 'Wijzig de categorie van een script (:scripts) in een van :categories, of laat hem leeg om het nooit te blokkeren.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Categorie',
     ],
 
     'types' => [
         'info' => 'Alleen melding',
         'opt-in' => 'Opt-in (vragen vóór cookies)',
         'opt-out' => 'Opt-out (cookies tot weigering)',
+    ],
+
+    'modes' => [
+        'banner' => 'Toestaan of weigeren',
+        'categories' => 'Een keuze per categorie',
     ],
 ];
