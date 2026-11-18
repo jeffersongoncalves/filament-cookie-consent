@@ -33,6 +33,10 @@ return [
             'heading' => 'Muvofiqlik',
             'description' => 'Tashrif buyuruvchilar qanday rozilik berishini va Google teglari Consent Mode v2 signallarini olishini tanlang.',
         ],
+        'scripts' => [
+            'heading' => 'Skriptlar va toifalar',
+            'description' => 'Tashrifchi toifasiga ruxsat bermaguncha analitika, marketing va chat skriptlarini ushlab turing.',
+        ],
     ],
     'fields' => [
         'css_url' => 'CSS URL',
@@ -63,11 +67,28 @@ return [
         'type' => 'Muvofiqlik turi',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Rozilik signallarini Google Tag Manager / gtag ga yuboradi. Rozilik tegi ulardan oldin yuklanishi kerak.',
+        'preferences_css_url' => 'Sozlamalar banneri CSS URL manzili',
+        'preferences_js_url' => 'Sozlamalar banneri JavaScript URL manzili',
+        'mode' => 'Banner',
+        'mode_help' => 'Toifa bo\'yicha tanlov Hammasini qabul qilish, Hammasini rad etish va har bir cookie toifasi uchun kalitni ko\'rsatadi.',
+        'block_scripts' => 'Roziligacha skriptlarni bloklash',
+        'block_scripts_help' => 'Analitika va chat paketlarining skriptlari faqat toifasiga ruxsat berilgandan keyin ishlaydi.',
+        'honor_gpc' => 'Global Privacy Control\'ga rioya qilish',
+        'honor_gpc_help' => 'Global Privacy Control signali CCPA talab qilganidek marketing toifasini rad etadi.',
+        'script_categories' => 'Skript toifalari',
+        'script_categories_help' => 'Skript (:scripts) toifasini :categories dan biriga o\'zgartiring yoki hech qachon bloklanmasligi uchun bo\'sh qoldiring.',
+        'script_categories_key' => 'Skript',
+        'script_categories_value' => 'Toifa',
     ],
 
     'types' => [
         'info' => 'Faqat bildirishnoma',
         'opt-in' => 'Opt-in (cookie dan oldin so\'rash)',
         'opt-out' => 'Opt-out (rad etilguncha cookie)',
+    ],
+
+    'modes' => [
+        'banner' => 'Ruxsat berish yoki rad etish',
+        'categories' => 'Toifa bo\'yicha tanlov',
     ],
 ];

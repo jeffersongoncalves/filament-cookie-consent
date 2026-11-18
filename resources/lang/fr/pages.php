@@ -33,6 +33,10 @@ return [
             'heading' => 'Conformité',
             'description' => 'Choisissez comment les visiteurs consentent et si les balises Google reçoivent les signaux Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Scripts et catégories',
+            'description' => 'Retenez les scripts de mesure d\'audience, de marketing et de chat jusqu\'à ce que le visiteur autorise leur catégorie.',
+        ],
     ],
     'fields' => [
         'css_url' => 'URL CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Type de conformité',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Envoie les signaux de consentement à Google Tag Manager / gtag. La balise de consentement doit être chargée avant.',
+        'preferences_css_url' => 'URL du CSS du bandeau de préférences',
+        'preferences_js_url' => 'URL du JavaScript du bandeau de préférences',
+        'mode' => 'Bandeau',
+        'mode_help' => 'Un choix par catégorie affiche Tout accepter, Tout refuser et un interrupteur pour chaque catégorie de cookies.',
+        'block_scripts' => 'Bloquer les scripts jusqu\'au consentement',
+        'block_scripts_help' => 'Les scripts des paquets de mesure d\'audience et de chat ne s\'exécutent qu\'une fois leur catégorie autorisée.',
+        'honor_gpc' => 'Respecter Global Privacy Control',
+        'honor_gpc_help' => 'Un signal Global Privacy Control refuse la catégorie marketing, comme l\'exige le CCPA.',
+        'script_categories' => 'Catégories des scripts',
+        'script_categories_help' => 'Changez la catégorie d\'un script (:scripts) pour l\'une de :categories, ou laissez-la vide pour ne jamais le bloquer.',
+        'script_categories_key' => 'Script',
+        'script_categories_value' => 'Catégorie',
     ],
 
     'types' => [
         'info' => 'Information seule',
         'opt-in' => 'Opt-in (demander avant les cookies)',
         'opt-out' => 'Opt-out (cookies jusqu\'au refus)',
+    ],
+
+    'modes' => [
+        'banner' => 'Accepter ou refuser',
+        'categories' => 'Un choix par catégorie',
     ],
 ];

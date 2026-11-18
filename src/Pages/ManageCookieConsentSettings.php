@@ -3,6 +3,7 @@
 namespace JeffersonGoncalves\Filament\CookieConsent\Pages;
 
 use Filament\Forms\Components\ColorPicker;
+use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -10,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
+use JeffersonGoncalves\CookieConsent\Scripts;
 use JeffersonGoncalves\CookieConsent\Settings\CookieConsentSettings;
 use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 
@@ -48,6 +50,16 @@ class ManageCookieConsentSettings extends SettingsPage
 
                         TextInput::make('js_url')
                             ->label(__('filament-cookie-consent::pages.fields.js_url'))
+                            ->url()
+                            ->required(),
+
+                        TextInput::make('preferences_css_url')
+                            ->label(__('filament-cookie-consent::pages.fields.preferences_css_url'))
+                            ->url()
+                            ->required(),
+
+                        TextInput::make('preferences_js_url')
+                            ->label(__('filament-cookie-consent::pages.fields.preferences_js_url'))
                             ->url()
                             ->required(),
                     ])->columns(2),
@@ -175,6 +187,37 @@ class ManageCookieConsentSettings extends SettingsPage
                         Toggle::make('consent_mode')
                             ->label(__('filament-cookie-consent::pages.fields.consent_mode'))
                             ->helperText(__('filament-cookie-consent::pages.fields.consent_mode_help')),
+                    ])->columns(2),
+
+                Section::make(__('filament-cookie-consent::pages.sections.scripts.heading'))
+                    ->description(__('filament-cookie-consent::pages.sections.scripts.description'))
+                    ->schema([
+                        Select::make('mode')
+                            ->label(__('filament-cookie-consent::pages.fields.mode'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.mode_help'))
+                            ->options([
+                                'banner' => __('filament-cookie-consent::pages.modes.banner'),
+                                'categories' => __('filament-cookie-consent::pages.modes.categories'),
+                            ])
+                            ->required(),
+
+                        Toggle::make('block_scripts')
+                            ->label(__('filament-cookie-consent::pages.fields.block_scripts'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.block_scripts_help')),
+
+                        Toggle::make('honor_gpc')
+                            ->label(__('filament-cookie-consent::pages.fields.honor_gpc'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.honor_gpc_help')),
+
+                        KeyValue::make('script_categories')
+                            ->label(__('filament-cookie-consent::pages.fields.script_categories'))
+                            ->keyLabel(__('filament-cookie-consent::pages.fields.script_categories_key'))
+                            ->valueLabel(__('filament-cookie-consent::pages.fields.script_categories_value'))
+                            ->helperText(__('filament-cookie-consent::pages.fields.script_categories_help', [
+                                'scripts' => implode(', ', array_keys(Scripts::CATALOG)),
+                                'categories' => implode(', ', Scripts::CATEGORIES),
+                            ]))
+                            ->columnSpanFull(),
                     ])->columns(2),
             ]);
     }

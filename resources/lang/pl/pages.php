@@ -33,6 +33,10 @@ return [
             'heading' => 'Zgodność',
             'description' => 'Wybierz, jak odwiedzający wyrażają zgodę i czy tagi Google otrzymują sygnały Consent Mode v2.',
         ],
+        'scripts' => [
+            'heading' => 'Skrypty i kategorie',
+            'description' => 'Wstrzymuj skrypty analityczne, marketingowe i czatu, dopóki odwiedzający nie zezwoli na ich kategorię.',
+        ],
     ],
     'fields' => [
         'css_url' => 'Adres URL CSS',
@@ -63,11 +67,28 @@ return [
         'type' => 'Typ zgodności',
         'consent_mode' => 'Google Consent Mode v2',
         'consent_mode_help' => 'Wysyła sygnały zgody do Google Tag Manager / gtag. Tag zgody musi załadować się wcześniej.',
+        'preferences_css_url' => 'Adres URL CSS banera preferencji',
+        'preferences_js_url' => 'Adres URL JavaScript banera preferencji',
+        'mode' => 'Baner',
+        'mode_help' => 'Wybór dla każdej kategorii pokazuje Akceptuj wszystko, Odrzuć wszystko i przełącznik dla każdej kategorii plików cookie.',
+        'block_scripts' => 'Blokuj skrypty do czasu zgody',
+        'block_scripts_help' => 'Skrypty pakietów analitycznych i czatu uruchamiają się dopiero po zezwoleniu na ich kategorię.',
+        'honor_gpc' => 'Respektuj Global Privacy Control',
+        'honor_gpc_help' => 'Sygnał Global Privacy Control odrzuca kategorię marketingową, jak wymaga tego CCPA.',
+        'script_categories' => 'Kategorie skryptów',
+        'script_categories_help' => 'Zmień kategorię skryptu (:scripts) na jedną z :categories lub zostaw pustą, aby nigdy go nie blokować.',
+        'script_categories_key' => 'Skrypt',
+        'script_categories_value' => 'Kategoria',
     ],
 
     'types' => [
         'info' => 'Tylko informacja',
         'opt-in' => 'Opt-in (pytaj przed cookies)',
         'opt-out' => 'Opt-out (cookies do odmowy)',
+    ],
+
+    'modes' => [
+        'banner' => 'Zezwól lub odrzuć',
+        'categories' => 'Wybór dla każdej kategorii',
     ],
 ];
